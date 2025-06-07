@@ -1,0 +1,23 @@
+/* Ensure modal appears above everything */
+:host {
+    z-index: 1000;
+  }
+  
+  /* Custom scrollbar for thumbnail strip */
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  

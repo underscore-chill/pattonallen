@@ -1,0 +1,171 @@
+<!-- Modal Overlay -->
+<div 
+  *ngIf="isVisible && property" 
+  class="fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center p-4"
+  (click)="onClose()"
+>
+  <!-- Modal Content -->
+  <div 
+    class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+    (click)="$event.stopPropagation()"
+  >
+    <!-- Header -->
+    <div class="flex justify-between items-center p-6 border-b">
+      <h2 class="text-2xl font-bold text-gray-800">{{ property.title }}</h2>
+      <button 
+        (click)="onClose()"
+        class="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+      >
+        ×
+      </button>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="relative">
+      <!-- Main Image -->
+      <div class="relative h-96 overflow-hidden">
+        <img 
+        loading="lazy"
+          [src]="property.images[currentImageIndex]" 
+          [alt]="property.title"
+          class="w-full h-full object-cover"
+        >
+        
+        <!-- Navigation Arrows -->
+        <button 
+          *ngIf="currentImageIndex > 0"
+          (click)="previousImage()"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        
+        <button 
+          *ngIf="currentImageIndex < property.images.length - 1"
+          (click)="nextImage()"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <!-- Image Counter -->
+        <div class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded">
+          {{ currentImageIndex + 1 }} / {{ property.images.length }}
+        </div>
+      </div>
+
+      <!-- Thumbnail Strip -->
+      <div class="flex space-x-2 p-4 overflow-x-auto">
+        <button 
+          *ngFor="let image of property.images; let i = index"
+          (click)="selectImage(i)"
+          class="flex-shrink-0 w-20 h-16 rounded overflow-hidden border-2"
+          [class.border-primary]="i === currentImageIndex"
+          [class.border-gray-300]="i !== currentImageIndex"
+        >
+          <img 
+            loading="lazy"
+            [src]="image" 
+            [alt]="'Room ' + (i + 1)"
+            class="w-full h-full object-cover"
+          >
+        </button>
+      </div>
+    </div>
+
+    <!-- Property Details -->
+    <div class="p-6">
+      <!-- Price and Basic Info -->
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <p class="text-gray-600 mb-1">{{ property.address }}</p>
+          <p class="text-gray-600 mb-4">{{ property.city }}, NC {{ property.zipCode }}</p>
+          
+          <div class="flex items-center space-x-6 mb-4">
+            <span class="text-gray-700 font-medium">{{ property.bedrooms }} beds</span>
+            <span class="text-gray-700 font-medium">{{ property.bathrooms }} baths</span>
+            <span class="text-gray-700 font-medium">{{ property.propertyType }}</span>
+          </div>
+        </div>
+        <div class="text-right">
+          <span class="text-3xl font-bold text-gray-900">${{ property.rent | number }}</span>
+          <p class="text-gray-600">per month</p>
+        </div>
+      </div>
+
+      <!-- Availability -->
+      <div class="mb-6">
+        <p class="text-gray-700"><strong>Available:</strong> {{ property.availableDate }}</p>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-3">Description</h3>
+        <p class="text-gray-700 leading-relaxed">{{ property.description }}</p>
+      </div>
+
+      <!-- Features -->
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-3">Features & Amenities</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+          <div class="flex items-center text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Hardwood Floors
+          </div>
+          <div class="flex items-center text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Updated Kitchen
+          </div>
+          <div class="flex items-center text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Air Conditioning
+          </div>
+          <div class="flex items-center text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Washer/Dryer
+          </div>
+          <div class="flex items-center text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Parking Available
+          </div>
+          <div class="flex items-center text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Pet Friendly
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 pt-6 border-t">
+        <button 
+          (click)="scheduleViewing()"
+          class="bg-secondary hover:bg-secondary-dark text-white font-medium py-3 px-8 rounded transition-colors duration-200"
+        >
+          SCHEDULE VIEWING
+        </button>
+        <button 
+          (click)="submitApplication()"
+          class="bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded transition-colors duration-200"
+        >
+          SUBMIT APPLICATION
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

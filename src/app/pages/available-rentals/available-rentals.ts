@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, DOCUMENT, inject, signal } from '@angular/core';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { PropertyDetail } from './property-detail/property-detail';
 
 interface Property {
   id: number;
@@ -15,17 +16,19 @@ interface Property {
   availableDate: string;
   propertyType: string;
   image: string;
+  images: string[];
   description: string;
 }
 
 @Component({
   selector: 'app-available-rentals',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [RouterModule, FormsModule, PropertyDetail, DecimalPipe],
   templateUrl: './available-rentals.html',
   styleUrls: ['./available-rentals.css'],
 })
 export class AvailableRentals {
+  document = inject(DOCUMENT);
   viewMode: 'list' | 'map' = 'list';
   searchTerm = '';
   selectedCity = '';
@@ -73,9 +76,16 @@ export class AvailableRentals {
       rent: 1500,
       availableDate: '7/10/2025',
       propertyType: 'House',
-      image: 'assets/images/property-1.jpg',
+      image:
+        'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
-        'Beautiful upgraded home with modern amenities and spacious layout.',
+        'Beautiful upgraded home with modern amenities and spacious layout. Features include hardwood floors throughout, updated kitchen with stainless steel appliances, granite countertops, and a large master suite with walk-in closet. The property also includes a private backyard, central air conditioning, and washer/dryer hookups.',
     },
     {
       id: 2,
@@ -88,9 +98,17 @@ export class AvailableRentals {
       rent: 3200,
       availableDate: '6/17/2025',
       propertyType: 'House',
-      image: 'assets/images/property-2.jpg',
+      image:
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
-        'Spacious family home with fenced yard, perfect for families with children and pets.',
+        'Spacious family home with fenced yard, perfect for families with children and pets. This beautifully updated property features an open floor plan, modern kitchen with island, master suite with ensuite bathroom, and a large fenced backyard perfect for entertaining. Additional amenities include a two-car garage, central heating and cooling, and a covered patio.',
     },
     {
       id: 3,
@@ -103,7 +121,14 @@ export class AvailableRentals {
       rent: 1800,
       availableDate: '8/1/2025',
       propertyType: 'Condo',
-      image: 'assets/images/property-3.jpg',
+      image:
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1568414032535-5d1ef3a59c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Luxury condo in the heart of downtown with city views and modern finishes.',
     },
@@ -118,7 +143,14 @@ export class AvailableRentals {
       rent: 1400,
       availableDate: '7/15/2025',
       propertyType: 'Apartment',
-      image: 'assets/images/property-4.jpg',
+      image:
+        'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1520342868574-5fa3804e551e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1523217582852-7190d3156bab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1541346764-0396a8a4ca38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Cozy apartment with stunning mountain views and hiking trails nearby.',
     },
@@ -133,7 +165,14 @@ export class AvailableRentals {
       rent: 2100,
       availableDate: '6/30/2025',
       propertyType: 'House',
-      image: 'assets/images/property-5.jpg',
+      image:
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1555905924-945140353c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1551523851-628559895253?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Large family home with attached garage and beautiful landscaping.',
     },
@@ -148,7 +187,14 @@ export class AvailableRentals {
       rent: 1900,
       availableDate: '8/15/2025',
       propertyType: 'Townhouse',
-      image: 'assets/images/property-6.jpg',
+      image:
+        'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Historic charm meets modern convenience in this downtown townhouse.',
     },
@@ -163,7 +209,14 @@ export class AvailableRentals {
       rent: 1650,
       availableDate: '7/1/2025',
       propertyType: 'Duplex',
-      image: 'assets/images/property-7.jpg',
+      image:
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Modern duplex with private entrance and high-end finishes throughout.',
     },
@@ -178,7 +231,14 @@ export class AvailableRentals {
       rent: 1200,
       availableDate: '8/20/2025',
       propertyType: 'Apartment',
-      image: 'assets/images/property-8.jpg',
+      image:
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1568414032535-5d1ef3a59c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Perfect for students or young professionals, close to campus and amenities.',
     },
@@ -193,7 +253,14 @@ export class AvailableRentals {
       rent: 2800,
       availableDate: '9/1/2025',
       propertyType: 'House',
-      image: 'assets/images/property-9.jpg',
+      image:
+        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description: 'Secluded mountain home with hot tub and panoramic views.',
     },
     {
@@ -207,7 +274,14 @@ export class AvailableRentals {
       rent: 1750,
       availableDate: '7/20/2025',
       propertyType: 'House',
-      image: 'assets/images/property-10.jpg',
+      image:
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Recently renovated ranch home with open floor plan and large yard.',
     },
@@ -222,7 +296,14 @@ export class AvailableRentals {
       rent: 2400,
       availableDate: '8/5/2025',
       propertyType: 'Apartment',
-      image: 'assets/images/property-11.jpg',
+      image:
+        'https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Premium apartment with concierge service and rooftop amenities.',
     },
@@ -237,7 +318,14 @@ export class AvailableRentals {
       rent: 1550,
       availableDate: '7/25/2025',
       propertyType: 'Townhouse',
-      image: 'assets/images/property-12.jpg',
+      image:
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1572120360610-d971b9ed5db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Welcoming home for families with pets, includes fenced yard.',
     },
@@ -252,7 +340,14 @@ export class AvailableRentals {
       rent: 4500,
       availableDate: '9/15/2025',
       propertyType: 'House',
-      image: 'assets/images/property-13.jpg',
+      image:
+        'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Luxurious estate home with golf course views and premium amenities.',
     },
@@ -267,7 +362,14 @@ export class AvailableRentals {
       rent: 950,
       availableDate: '8/10/2025',
       propertyType: 'Apartment',
-      image: 'assets/images/property-14.jpg',
+      image:
+        'https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=cropc203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1568414032535-5d1ef3a59c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description: 'Great value apartment perfect for first-time renters.',
     },
     {
@@ -281,7 +383,14 @@ export class AvailableRentals {
       rent: 3000,
       availableDate: '9/30/2025',
       propertyType: 'House',
-      image: 'assets/images/property-15.jpg',
+      image:
+        'https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Historic Victorian home with modern updates and original character.',
     },
@@ -296,7 +405,14 @@ export class AvailableRentals {
       rent: 2600,
       availableDate: '8/25/2025',
       propertyType: 'Condo',
-      image: 'assets/images/property-16.jpg',
+      image:
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Stunning lakefront property with private dock and water access.',
     },
@@ -311,7 +427,14 @@ export class AvailableRentals {
       rent: 1850,
       availableDate: '7/5/2025',
       propertyType: 'Duplex',
-      image: 'assets/images/property-17.jpg',
+      image:
+        'https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Contemporary duplex with energy-efficient features and modern design.',
     },
@@ -326,7 +449,14 @@ export class AvailableRentals {
       rent: 1300,
       availableDate: '8/30/2025',
       propertyType: 'Apartment',
-      image: 'assets/images/property-18.jpg',
+      image:
+        'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1568414032535-5d1ef3a59c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description: 'Quiet garden-level apartment with patio and garden access.',
     },
     {
@@ -340,7 +470,14 @@ export class AvailableRentals {
       rent: 3800,
       availableDate: '10/1/2025',
       propertyType: 'Condo',
-      image: 'assets/images/property-19.jpg',
+      image:
+        'https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Top-floor penthouse with panoramic city and mountain views.',
     },
@@ -355,7 +492,14 @@ export class AvailableRentals {
       rent: 2900,
       availableDate: '9/10/2025',
       propertyType: 'House',
-      image: 'assets/images/property-20.jpg',
+      image:
+        'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Beautiful family home with in-ground pool and entertainment area.',
     },
@@ -370,7 +514,14 @@ export class AvailableRentals {
       rent: 1450,
       availableDate: '7/12/2025',
       propertyType: 'House',
-      image: 'assets/images/property-21.jpg',
+      image:
+        'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Charming cottage with rustic charm and modern conveniences.',
     },
@@ -385,7 +536,14 @@ export class AvailableRentals {
       rent: 1600,
       availableDate: '8/18/2025',
       propertyType: 'Apartment',
-      image: 'assets/images/property-22.jpg',
+      image:
+        'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Trendy loft with exposed brick and high ceilings in arts district.',
     },
@@ -400,7 +558,14 @@ export class AvailableRentals {
       rent: 2200,
       availableDate: '9/5/2025',
       propertyType: 'Townhouse',
-      image: 'assets/images/property-23.jpg',
+      image:
+        'https://images.unsplash.com/photo-1600047509807-f8261a3f7538?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1600047509807-f8261a3f7538?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description: 'Three-story townhouse with breathtaking mountain vistas.',
     },
     {
@@ -414,7 +579,14 @@ export class AvailableRentals {
       rent: 1600,
       availableDate: '7/28/2025',
       propertyType: 'Duplex',
-      image: 'assets/images/property-24.jpg',
+      image:
+        'https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description: 'Spacious duplex perfect for growing families on a budget.',
     },
     {
@@ -428,7 +600,14 @@ export class AvailableRentals {
       rent: 1700,
       availableDate: '8/8/2025',
       propertyType: 'House',
-      image: 'assets/images/property-25.jpg',
+      image:
+        'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Single-level home with accessibility features and low maintenance.',
     },
@@ -443,7 +622,14 @@ export class AvailableRentals {
       rent: 1350,
       availableDate: '9/20/2025',
       propertyType: 'Apartment',
-      image: 'assets/images/property-26.jpg',
+      image:
+        'https://images.unsplash.com/photo-1594484208280-efa00f96fc21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1594484208280-efa00f96fc21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Charming apartment in historic district with period details.',
     },
@@ -458,7 +644,14 @@ export class AvailableRentals {
       rent: 3400,
       availableDate: '10/15/2025',
       propertyType: 'House',
-      image: 'assets/images/property-27.jpg',
+      image:
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Cutting-edge smart home with automated systems and energy efficiency.',
     },
@@ -473,7 +666,14 @@ export class AvailableRentals {
       rent: 1400,
       availableDate: '8/22/2025',
       propertyType: 'Apartment',
-      image: 'assets/images/property-28.jpg',
+      image:
+        'https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7e64c4a2d58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Inspiring loft space perfect for artists with natural light and high ceilings.',
     },
@@ -488,7 +688,14 @@ export class AvailableRentals {
       rent: 5200,
       availableDate: '11/1/2025',
       propertyType: 'House',
-      image: 'assets/images/property-29.jpg',
+      image:
+        'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Prestigious home on golf course with club membership included.',
     },
@@ -503,16 +710,27 @@ export class AvailableRentals {
       rent: 1100,
       availableDate: '9/25/2025',
       propertyType: 'House',
-      image: 'assets/images/property-30.jpg',
+      image:
+        'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      ],
       description:
         'Innovative tiny home with solar power and sustainable features.',
     },
   ];
 
-  filteredProperties: Property[] = [];
+  filteredProperties = signal<Property[]>([]);
+
+  expandedDescriptions: Set<number> = new Set();
+  selectedProperty: Property | null = null;
+  showPropertyDetail = false;
 
   ngOnInit() {
-    this.filteredProperties = [...this.properties];
+    this.filteredProperties.set([...this.properties]);
   }
 
   clearSearch() {
@@ -529,7 +747,7 @@ export class AvailableRentals {
   }
 
   applyFilters() {
-    this.filteredProperties = this.properties.filter((property) => {
+    this.filteredProperties.set(this.properties.filter((property) => {
       const matchesSearch =
         !this.searchTerm ||
         property.address
@@ -566,7 +784,7 @@ export class AvailableRentals {
         matchesBedrooms &&
         matchesBaths
       );
-    });
+    }));
 
     this.sortProperties();
   }
@@ -574,16 +792,16 @@ export class AvailableRentals {
   sortProperties() {
     switch (this.sortBy) {
       case 'Price: Low to High':
-        this.filteredProperties.sort((a, b) => a.rent - b.rent);
+        this.filteredProperties.set(this.filteredProperties().sort((a, b) => a.rent - b.rent));
         break;
       case 'Price: High to Low':
-        this.filteredProperties.sort((a, b) => b.rent - a.rent);
+        this.filteredProperties.set(this.filteredProperties().sort((a, b) => b.rent - a.rent));
         break;
       case 'Bedrooms':
-        this.filteredProperties.sort((a, b) => b.bedrooms - a.bedrooms);
+        this.filteredProperties.set(this.filteredProperties().sort((a, b) => b.bedrooms - a.bedrooms));
         break;
       case 'Bathrooms':
-        this.filteredProperties.sort((a, b) => b.bathrooms - a.bathrooms);
+        this.filteredProperties.set(this.filteredProperties().sort((a, b) => b.bathrooms - a.bathrooms));
         break;
       default:
         // Most Recent - keep original order
@@ -603,5 +821,31 @@ export class AvailableRentals {
   submitApplication(property: Property) {
     // Handle application logic
     console.log('Submit application for:', property.title);
+  }
+
+  toggleDescription(propertyId: number) {
+    if (this.expandedDescriptions.has(propertyId)) {
+      this.expandedDescriptions.delete(propertyId);
+    } else {
+      this.expandedDescriptions.add(propertyId);
+    }
+  }
+
+  isDescriptionExpanded(propertyId: number): boolean {
+    return this.expandedDescriptions.has(propertyId);
+  }
+
+  openPropertyDetail(property: Property) {
+    this.selectedProperty = property;
+    this.showPropertyDetail = true;
+    // Prevent body scroll when modal is open
+    this.document.body.style.overflow = 'hidden';
+  }
+
+  closePropertyDetail() {
+    this.selectedProperty = null;
+    this.showPropertyDetail = false;
+    // Restore body scroll
+    this.document.body.style.overflow = 'auto';
   }
 }
