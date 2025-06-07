@@ -1,8 +1,139 @@
-<section class="hero-section relative min-h-screen flex items-center">
+<section class="hero-section relative min-h-[70vh] flex items-center">
   <div
     class="absolute inset-0 bg-cover bg-center z-0"
-    style="background-image: url('/images/patton-avl-pictures.jpg')"
+    style="background-image: url('/images/about-hero.png')"
+    aria-label="Background image of the hero section"
   ></div>
-  <div class="absolute inset-0 bg-black/30 z-10"></div>
   <div class="pl-4 container-custom relative z-20 text-white"></div>
+</section>
+
+<section class="py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-teal-600 mb-4">Meet the Owners</h2>
+      <div class="w-24 h-1 bg-teal-600 mx-auto"></div>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Text Content -->
+      <div class="space-y-6">
+        <p class="text-lg text-gray-700 leading-relaxed">
+          <span class="font-semibold">Brent Allen and Sefton Patton</span>,
+          owners of Patton Allen Property Management, combine their unique
+          skills and backgrounds to create a truly new kind of management
+          company. Over the last several decades, Brent has built and grown The
+          Allen Team, one of the area's top performing real estate teams, with a
+          vast network of repeat clients in and around the Asheville area.
+        </p>
+
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Sefton has spent his career analyzing and creating products out of
+          real estate data, and has worked directly with some of the largest
+          insurance companies, hedge funds, and property management companies in
+          the US. Brent and Sefton bring these skills, along with their track
+          record of success, to Patton Allen Property Management.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="lg:order-last">
+        <div class="relative rounded-lg overflow-hidden shadow-xl">
+          <img
+            src="/images/owners.jpg"
+            alt="Brent Allen and Sefton Patton, owners of Patton Allen Property Management"
+            class="w-full h-96 object-cover"
+          />
+          <!-- Overlay for professional look -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-teal-600 mb-4">Meet the Team</h2>
+      <div class="w-24 h-1 bg-teal-600 mx-auto"></div>
+    </div>
+
+    <!-- Team Members -->
+    <div class="space-y-20">
+      <!-- Irene Lopez de Carrizosa -->
+      <div
+        class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12"
+      >
+        <!-- Profile Image -->
+        <div class="flex-shrink-0">
+          <div class="w-64 h-64 rounded-full overflow-hidden shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1494790108755-2616b612b566?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Irene Lopez de Carrizosa, Property Manager"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <h3 class="text-2xl font-bold text-gray-800 mb-2">
+            Irene Lopez de Carrizosa
+          </h3>
+          <h4 class="text-lg font-semibold text-gray-600 mb-6">
+            Property Manager
+          </h4>
+
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Irene's experience in real estate sales on one of Asheville's top
+            real estate teams, coupled with her success as a residential leasing
+            agent in New York City made her move to Property Management in 2020
+            a natural transition. She has a passion for real estate and supports
+            her clients in their investments by prioritizing communication,
+            providing exceptional customer service, and staying current on the
+            changes in our fast-paced local market. As a member of the National
+            Association of Residential Property Managers, Irene is always
+            focused on expanding her knowledge and understanding in this field.
+            She joined Patton Allen because she aligned deeply with their
+            dedication to providing an extraordinary experience to both owners
+            and tenants, and because of the company's commitment to supporting
+            the local community.
+          </p>
+        </div>
+      </div>
+
+      @for (team of teams(); track $index) {
+      <!-- Satorria Jones -->
+      <div
+        class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12"
+      >
+        <!-- Profile Image -->
+        <div class="flex-shrink-0">
+          <div class="w-64 h-64 rounded-full overflow-hidden shadow-lg">
+            <img
+              [src]="team.image"
+              alt="{{ team.name }}, {{ team.role }}"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ team.name }}</h3>
+          <h4 class="text-lg font-semibold text-gray-600 mb-6">
+            {{ team.role }}
+          </h4>
+
+          <p class="text-gray-700 leading-relaxed text-lg">{{ team.bio }}</p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
 </section>

@@ -101,7 +101,7 @@
             (mouseenter)="showDropdown('about')"
             (mouseleave)="hideDropdown()"
           >
-            <a href="/about-us" class="nav-link flex items-center">
+            <a routerLink="/about-us" class="nav-link flex items-center">
               About Us
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@
               [class.translate-y-2]="!isDropdownActive('about')"
             >
               <a
-                routerLink="/our-team"
+                routerLink="/owners"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
                 >Meet the Team</a
               >
@@ -259,7 +259,7 @@
         >
         <a routerLink="/about-us" class="nav-link py-2">About Us</a>
         <a routerLink="/for-tenants" class="nav-link py-2">For Tenants</a>
-        <a routerLink="/for-owners" class="nav-link py-2">For Owners</a>
+        <a routerLink="/owners" class="nav-link py-2">For Owners</a>
         <a routerLink="/contact" class="nav-link py-2">Contact Us</a>
         <div class="flex flex-col space-y-2 pt-2 border-t border-white/20">
           <a
