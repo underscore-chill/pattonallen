@@ -45,6 +45,7 @@
   <div class="container-custom py-6">
     <div class="flex flex-col lg:flex-row gap-6">
       <!-- Sidebar Filters -->
+      @if(viewMode == 'list'){
       <div class="lg:w-1/4">
         <div class="bg-white p-6 rounded-lg shadow-sm">
           <!-- Search -->
@@ -91,13 +92,11 @@
                 (ngModelChange)="onFilterChange()"
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               >
-              @for (city of cities; track $index) {
-                <option
-                  [value]="city === 'All Cities' ? '' : city"
-                >
+                @for (city of cities; track $index) {
+                <option [value]="city === 'All Cities' ? '' : city">
                   {{ city }}
                 </option>
-              }
+                }
               </select>
             </div>
 
@@ -112,11 +111,9 @@
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               >
                 @for (type of propertyTypes; track $index) {
-                  <option
-                    [value]="type === 'All Types' ? '' : type"
-                  >
-                    {{ type }}
-                  </option>
+                <option [value]="type === 'All Types' ? '' : type">
+                  {{ type }}
+                </option>
                 }
               </select>
             </div>
@@ -132,11 +129,9 @@
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               >
                 @for (bedroom of bedroomOptions; track $index) {
-                  <option
-                    [value]="bedroom === 'Any' ? '' : bedroom"
-                  >
-                    {{ bedroom }}
-                  </option>
+                <option [value]="bedroom === 'Any' ? '' : bedroom">
+                  {{ bedroom }}
+                </option>
                 }
               </select>
             </div>
@@ -151,13 +146,9 @@
                 (ngModelChange)="onFilterChange()"
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               >
-              @for (bath of bathOptions; track $index) {
-                <option
-                  [value]="bath === 'Any' ? '' : bath"
-                >
-                  {{ bath }}
-                </option>
-              }
+                @for (bath of bathOptions; track $index) {
+                <option [value]="bath === 'Any' ? '' : bath">{{ bath }}</option>
+                }
               </select>
             </div>
           </div>
@@ -177,6 +168,7 @@
           </div>
         </div>
       </div>
+      }
 
       <!-- Property Listings -->
       <div class="lg:w-3/4">
@@ -187,7 +179,7 @@
             class="bg-white rounded-lg flex flex-col md:flex-row shadow-sm overflow-hidden"
           >
             <!-- Property Image -->
-            <div class="md:w-1/3 relative">
+            <div class="md:w-1/3 h-fit relative">
               <img
                 loading="lazy"
                 [src]="property.image"
@@ -226,20 +218,15 @@
             </div>
 
             <!-- Property Details -->
-            <div class="md:w-2/3 p-6 flex flex-col justify-between">
-              <div>
-                <div class="flex justify-between items-start mb-2">
-                  <h3 class="text-xl font-bold text-secondary-dark">
-                    {{ property.title }}
-                  </h3>
-                  <span class="text-2xl font-bold text-gray-900"
-                    >${{ property.rent | number }}</span
-                  >
-                </div>
+            <div class="md:w-2/3 p-6 flex flex-col md:flex-row justify-between">
+              <div class="flex flex-col justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-secondary-dark">
+                  {{ property.title }}
+                </h3>
 
-                <p class="text-gray-600 mb-1">{{ property.address }}</p>
-                <p class="text-gray-600 mb-4">
-                  {{ property.city }}, NC {{ property.zipCode }}
+                <p class="text-gray-600 my-2">
+                  {{ property.address }} {{ property.city }}, NC {{
+                  property.zipCode }}
                 </p>
 
                 <div class="flex items-center space-x-4 mb-4">
@@ -292,8 +279,11 @@
               </div>
 
               <div
-                class="flex flex-col sm:flex-row items-start sm:items-center justify-between"
+                class="flex flex-col items-start md:items-end justify-between space-y-2"
               >
+                <span class="text-2xl font-bold text-gray-900"
+                  >${{ property.rent | number }}</span
+                >
                 <button
                   (click)="scheduleViewing(property)"
                   class="bg-secondary-dark hover:bg-secondary-dark text-white font-medium py-4 px-6 rounded transition-colors duration-200 mb-2 sm:mb-0"
@@ -313,9 +303,15 @@
         </div>
         } @if(viewMode === 'map') {
         <!-- Map View Placeholder -->
-        <div class="bg-white rounded-lg shadow-sm p-8 text-center">
-          <h3 class="text-xl font-semibold text-gray-800 mb-4">Map View</h3>
-          <p class="text-gray-600">Map integration would be implemented here</p>
+        <div class="w-full h-fit bg-white rounded-lg shadow-sm p-8 text-center">
+          <iframe
+          class="w-full h-80 md:h-[35rem] rounded-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.0129341799798!2d-82.57703562418772!3d35.57807257262078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88598cb871a4c9ad%3A0x352f6bef1fffdd33!2s264%20Haywood%20Rd%2C%20Asheville%2C%20NC%2028806%2C%20USA!5e0!3m2!1sen!2sng!4v1749327828677!5m2!1sen!2sng"
+            style="border: 0"
+            allowfullscreen="true"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
         } @if (filteredProperties().length === 0 && viewMode === 'list') {
         <!-- No Results -->

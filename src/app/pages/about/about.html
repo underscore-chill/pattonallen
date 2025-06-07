@@ -41,7 +41,7 @@
       <div class="lg:order-last">
         <div class="relative rounded-lg overflow-hidden shadow-xl">
           <img
-            src="/images/owners.jpg"
+            src="/images/owners.webp"
             alt="Brent Allen and Sefton Patton, owners of Patton Allen Property Management"
             class="w-full h-96 object-cover"
           />
@@ -65,47 +65,6 @@
 
     <!-- Team Members -->
     <div class="space-y-20">
-      <!-- Irene Lopez de Carrizosa -->
-      <div
-        class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12"
-      >
-        <!-- Profile Image -->
-        <div class="flex-shrink-0">
-          <div class="w-64 h-64 rounded-full overflow-hidden shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1494790108755-2616b612b566?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-              alt="Irene Lopez de Carrizosa, Property Manager"
-              class="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        <!-- Profile Content -->
-        <div class="flex-1 text-center lg:text-left">
-          <h3 class="text-2xl font-bold text-gray-800 mb-2">
-            Irene Lopez de Carrizosa
-          </h3>
-          <h4 class="text-lg font-semibold text-gray-600 mb-6">
-            Property Manager
-          </h4>
-
-          <p class="text-gray-700 leading-relaxed text-lg">
-            Irene's experience in real estate sales on one of Asheville's top
-            real estate teams, coupled with her success as a residential leasing
-            agent in New York City made her move to Property Management in 2020
-            a natural transition. She has a passion for real estate and supports
-            her clients in their investments by prioritizing communication,
-            providing exceptional customer service, and staying current on the
-            changes in our fast-paced local market. As a member of the National
-            Association of Residential Property Managers, Irene is always
-            focused on expanding her knowledge and understanding in this field.
-            She joined Patton Allen because she aligned deeply with their
-            dedication to providing an extraordinary experience to both owners
-            and tenants, and because of the company's commitment to supporting
-            the local community.
-          </p>
-        </div>
-      </div>
 
       @for (team of teams(); track $index) {
       <!-- Satorria Jones -->
@@ -117,7 +76,7 @@
           <div class="w-64 h-64 rounded-full overflow-hidden shadow-lg">
             <img
               [src]="team.image"
-              alt="{{ team.name }}, {{ team.role }}"
+              alt="{{ team.nameAndRole }}"
               class="w-full h-full object-cover"
             />
           </div>
@@ -125,10 +84,10 @@
 
         <!-- Profile Content -->
         <div class="flex-1 text-center lg:text-left">
-          <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ team.name }}</h3>
-          <h4 class="text-lg font-semibold text-gray-600 mb-6">
+          <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ team.nameAndRole }}</h3>
+          <!-- <h4 class="text-lg font-semibold text-gray-600 mb-6">
             {{ team.role }}
-          </h4>
+          </h4> -->
 
           <p class="text-gray-700 leading-relaxed text-lg">{{ team.bio }}</p>
         </div>

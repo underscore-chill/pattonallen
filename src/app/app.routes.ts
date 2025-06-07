@@ -16,6 +16,20 @@ export const routes: Routes = [
       import('./pages/contact/contact').then((m) => m.Contact),
   },
   {
+    path: 'tenants',
+    loadComponent: () =>
+      import('./pages/tenants/tenants').then((m) => m.Tenants),
+  },
+  {
+    path: 'owners',
+    loadComponent: () => import('./pages/owners/owners').then((m) => m.Owners),
+  },
+  {
+    path: 'contact',
+    loadComponent: () =>
+      import('./pages/contact/contact').then((m) => m.Contact),
+  },
+  {
     path: 'realtor-referral',
     loadComponent: () =>
       import('./pages/about/realtor-referral/realtor-referral').then(
