@@ -1,0 +1,296 @@
+<header class="bg-transparent h-fit fixed inset-0 z-[999]">
+  <div
+    [ngClass]="{ 'bg-[#00000079] shadow-md': isScrolled(), 'bg-transparent': !isScrolled() }"
+    class="p-4"
+  >
+    <div class="flex flex-wrap items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="flex items-center">
+          <img
+            src="/images/patton-allen-logo.png"
+            alt="Patton Allen Logo"
+            class="h-12"
+          />
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          type="button"
+          (click)="toggleMenu()"
+          class="text-white hover:text-neutral focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            @if(isMenuOpen()){
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+            }@else {
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+            }
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div
+        class="hidden md:flex items-center justify-between gap-4 flex-col flex-grow ml-10 text-white"
+      >
+        @if(!isScrolled()){
+        <div class="flex justify-end w-full items-center space-x-4">
+          <a
+            href="tel:8283943181"
+            class="text-white hover:text-neutral flex items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+            (828) 394-3181
+          </a>
+          <a
+            routerLink="/pay-rent"
+            class="bg-secondary hover:bg-secondary-dark text-white font-medium py-2 px-4 rounded transition-colors duration-200"
+          >
+            <img
+              src="/images/cards.png"
+              alt="Pay Rent Icon"
+              class="inline-block mr-2 h-5 w-5"
+            />
+            Pay Rent
+          </a>
+        </div>
+        }
+        <nav class="flex space-x-6 w-full justify-end items-center">
+          <a routerLink="/" class="nav-link">Home</a>
+          <a routerLink="/available-rentals" class="nav-link"
+            >Available Rentals</a
+          >
+
+          <!-- About Us Dropdown -->
+          <div
+            class="relative"
+            (mouseenter)="showDropdown('about')"
+            (mouseleave)="hideDropdown()"
+          >
+            <a href="/about-us" class="nav-link flex items-center">
+              About Us
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1 transition-transform duration-200"
+                [class.rotate-180]="isDropdownActive('about')"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </a>
+            <div
+              class="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-2 z-50 transition-all duration-200"
+              [class.opacity-0]="!isDropdownActive('about')"
+              [class.opacity-100]="isDropdownActive('about')"
+              [class.invisible]="!isDropdownActive('about')"
+              [class.visible]="isDropdownActive('about')"
+              [class.transform]="!isDropdownActive('about')"
+              [class.translate-y-2]="!isDropdownActive('about')"
+            >
+              <a
+                routerLink="/our-team"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >Meet the Team</a
+              >
+              <a
+                routerLink="/realtor-referral"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >Realtor Referrals</a
+              >
+    
+            </div>
+          </div>
+
+          <!-- For Tenants Dropdown -->
+          <div
+            class="relative"
+            (mouseenter)="showDropdown('tenants')"
+            (mouseleave)="hideDropdown()"
+          >
+            <a href="/for-tenants" class="nav-link flex items-center">
+              For Tenants
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1 transition-transform duration-200"
+                [class.rotate-180]="isDropdownActive('tenants')"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </a>
+            <div
+              class="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-2 z-50 transition-all duration-200"
+              [class.opacity-0]="!isDropdownActive('tenants')"
+              [class.opacity-100]="isDropdownActive('tenants')"
+              [class.invisible]="!isDropdownActive('tenants')"
+              [class.visible]="isDropdownActive('tenants')"
+              [class.transform]="!isDropdownActive('tenants')"
+              [class.translate-y-2]="!isDropdownActive('tenants')"
+            >
+              <a
+                href="/for-tenants/application"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >Application</a
+              >
+              <a
+                href="/for-tenants/maintenance"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >Maintenance</a
+              >
+              <a
+                href="/for-tenants/faq"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >FAQ</a
+              >
+            </div>
+          </div>
+
+          <!-- For Owners Dropdown -->
+          <div
+            class="relative"
+            (mouseenter)="showDropdown('owners')"
+            (mouseleave)="hideDropdown()"
+          >
+            <a href="/for-owners" class="nav-link flex items-center">
+              For Owners
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1 transition-transform duration-200"
+                [class.rotate-180]="isDropdownActive('owners')"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </a>
+            <div
+              class="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-2 z-50 transition-all duration-200"
+              [class.opacity-0]="!isDropdownActive('owners')"
+              [class.opacity-100]="isDropdownActive('owners')"
+              [class.invisible]="!isDropdownActive('owners')"
+              [class.visible]="isDropdownActive('owners')"
+              [class.transform]="!isDropdownActive('owners')"
+              [class.translate-y-2]="!isDropdownActive('owners')"
+            >
+              <a
+                href="/for-owners/services"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >Services</a
+              >
+              <a
+                href="/for-owners/pricing"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >Pricing</a
+              >
+              <a
+                href="/for-owners/get-started"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                >Get Started</a
+              >
+            </div>
+          </div>
+
+          <a href="/contact-us" class="nav-link">Contact Us</a>
+        </nav>
+      </div>
+    </div>
+
+    @if(isMenuOpen()){
+    <!-- Mobile Navigation -->
+    <div class="md:hidden mt-4 text-white">
+      <nav class="flex flex-col space-y-2">
+        <a routerLink="/" class="nav-link py-2">Home</a>
+        <a routerLink="/available-rentals" class="nav-link py-2"
+          >Available Rentals</a
+        >
+        <a routerLink="/about-us" class="nav-link py-2">About Us</a>
+        <a routerLink="/for-tenants" class="nav-link py-2">For Tenants</a>
+        <a routerLink="/for-owners" class="nav-link py-2">For Owners</a>
+        <a routerLink="/contact-us" class="nav-link py-2">Contact Us</a>
+        <div class="flex flex-col space-y-2 pt-2 border-t border-white/20">
+          <a
+            href="tel:8283943181"
+            class="text-white hover:text-neutral flex items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+            (828) 394-3181
+          </a>
+          <a
+            href="/pay-rent"
+            class="bg-secondary hover:bg-secondary-dark text-white font-medium py-2 px-4 rounded transition-colors duration-200 text-center"
+          >
+            Pay Rent
+          </a>
+        </div>
+      </nav>
+    </div>
+    }
+  </div>
+</header>

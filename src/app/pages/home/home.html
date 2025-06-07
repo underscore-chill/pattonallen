@@ -1,0 +1,100 @@
+<section class="hero-section relative min-h-screen flex items-center">
+  <div
+    class="absolute inset-0 bg-cover bg-center z-0"
+    style="background-image: url('/images/patton-avl-pictures.jpg')"
+  ></div>
+  <div class="absolute inset-0 bg-black/30 z-10"></div>
+  <div class="pl-4 container-custom relative z-20 text-white">
+    <div class="">
+      <h1
+        class="text-4xl md:text-5xl lg:text-6xl leading-loose font-normal mb-6"
+      >
+        Western North Carolina's
+        <br  />
+        <p class="mt-8">
+        Premiere Property Management Company
+        </p>
+      </h1>
+      <a
+        routerLink="/available-rentals"
+        class="inline-block bg-black/70 hover:bg-black text-white font-medium py-3 px-8 rounded transition-colors duration-200 text-lg"
+      >
+        Browse Vacancies
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="p-2 bg-white">
+  <div class="">
+    <!-- Service Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+      @for (card of serviceCards; track $index) {
+      <div class="relative group overflow-hidden">
+        <!-- Card Image -->
+        <div class="aspect-w-4 aspect-h-3 relative overflow-hidden">
+          <img
+            [src]="card.image"
+            [alt]="card.title"
+            class="w-full h-full object-cover transition-transform duration-500"
+          />
+          <!-- Overlay -->
+          <div
+            class="absolute inset-0 bg-black bg-opacity-30 transition-opacity duration-300  group-hover:scale-110"
+          ></div>
+
+          <!-- Title -->
+          <div
+            class="absolute inset-0 flex flex-col justify-center p-6 text-white"
+          >
+            <h3 class="text-2xl font-bold mb-2">{{ card.title }}</h3>
+          </div>
+
+          <!-- Hover Box -->
+          <div
+            [routerLink]="card.link"
+            class="absolute bottom-0 cursor-pointer text-white left-0 right-0 bg-black bg-opacity-10 p-4 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0"
+          >
+            <p class="text-white text-sm">{{ card.description }}</p>
+            <a
+              [routerLink]="card.link"
+              class="text-secondary font-medium text-sm mt-2 inline-block hover:underline"
+            >
+              Learn More →
+            </a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- Content Section -->
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary-600 mb-8">
+        Maximize the Return on Your Investment Property
+      </h2>
+      <div class="w-24 h-1 bg-primary mx-auto mb-10"></div>
+
+      <div class="space-y-6 text-left text-gray-700">
+        <p class="leading-relaxed">
+          Our clients are the heart of our business, and we are dedicated to
+          ensuring a delightful experience for you at every turn. At Patton
+          Allen Property Management, our philosophy is simple: whether you own
+          one property or one hundred, we remove the burden and stress of
+          property management and give you back the time to do the things that
+          matter most to you. It is our mission to deliver excellence in
+          service, so you don't have to lift a finger.
+        </p>
+
+        <p class="leading-relaxed">
+          Our team has over 40 years of combined industry experience, with
+          backgrounds in short- and long- term rental management, real estate
+          sales, and property data analytics. Our team's vast real estate
+          knowledge creates something truly unique when it comes to managing
+          your investment and maximizing your profit. We look forward to using
+          our expertise to serve you!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
