@@ -16,7 +16,7 @@ import {
 } from '@angular/router';
 
 @Component({
-  selector: 'pattonallen-page-loader',
+  selector: 'lexygray-page-loader',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `

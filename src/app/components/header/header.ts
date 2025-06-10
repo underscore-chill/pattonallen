@@ -9,7 +9,7 @@ import {
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'pattonallen-header',
+  selector: 'lexygray-header',
   imports: [RouterLink, NgClass],
   templateUrl: './header.html',
   styleUrl: './header.css',
@@ -23,8 +23,6 @@ export class Header {
   toggleMenu() {
     this.isMenuOpen.set(!this.isMenuOpen());
   }
-
-
 
   showDropdown(dropdown: string) {
     this.activeDropdown.set(dropdown);

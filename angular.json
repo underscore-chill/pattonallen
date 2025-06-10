@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "pattonallen": {
+    "lexygray": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -36,7 +36,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "pattonallen",
+      "prefix": "lexygray",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -49,9 +49,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -81,10 +79,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pattonallen:build:production"
+              "buildTarget": "lexygray:build:production"
             },
             "development": {
-              "buildTarget": "pattonallen:build:development"
+              "buildTarget": "lexygray:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,9 +100,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"]
           }
         }
       }

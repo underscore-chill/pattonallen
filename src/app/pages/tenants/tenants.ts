@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'pattonallen-tenants',
+  selector: 'lexygray-tenants',
   imports: [],
   templateUrl: './tenants.html',
-  styleUrl: './tenants.css'
+  styleUrl: './tenants.css',
 })
-export class Tenants {
-
-}
+export class Tenants {}

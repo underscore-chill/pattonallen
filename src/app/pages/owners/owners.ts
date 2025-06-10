@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'pattonallen-owners',
+  selector: 'lexygray-owners',
   imports: [],
   templateUrl: './owners.html',
-  styleUrl: './owners.css'
+  styleUrl: './owners.css',
 })
-export class Owners {
-
-}
+export class Owners {}
