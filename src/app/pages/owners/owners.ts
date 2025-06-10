@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lexygray-owners',
+  selector: 'lexigray-owners',
   imports: [],
   templateUrl: './owners.html',
   styleUrl: './owners.css',

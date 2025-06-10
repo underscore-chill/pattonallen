@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { PageLoader } from './components/pageloader';
 
 @Component({
-  selector: 'lexygray-root',
+  selector: 'lexigray-root',
   imports: [RouterOutlet, Header, Footer, PageLoader],
   templateUrl: './app.html',
   styleUrl: './app.css',

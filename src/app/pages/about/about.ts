@@ -7,7 +7,7 @@ interface Team {
 }
 
 @Component({
-  selector: 'lexygray-about',
+  selector: 'lexigray-about',
   imports: [],
   templateUrl: './about.html',
   styleUrl: './about.css',

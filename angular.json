@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "lexygray": {
+    "lexigray": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -36,7 +36,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "lexygray",
+      "prefix": "lexigray",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -79,10 +79,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "lexygray:build:production"
+              "buildTarget": "lexigray:build:production"
             },
             "development": {
-              "buildTarget": "lexygray:build:development"
+              "buildTarget": "lexigray:build:development"
             }
           },
           "defaultConfiguration": "development"

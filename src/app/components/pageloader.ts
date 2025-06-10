@@ -16,7 +16,7 @@ import {
 } from '@angular/router';
 
 @Component({
-  selector: 'lexygray-page-loader',
+  selector: 'lexigray-page-loader',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `

@@ -9,7 +9,7 @@ import {
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'lexygray-header',
+  selector: 'lexigray-header',
   imports: [RouterLink, NgClass],
   templateUrl: './header.html',
   styleUrl: './header.css',
