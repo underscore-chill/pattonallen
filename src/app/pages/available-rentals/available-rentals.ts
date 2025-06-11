@@ -727,7 +727,7 @@ export class AvailableRentals {
 
   expandedDescriptions: Set<number> = new Set();
   selectedProperty: Property | null = null;
-  showPropertyDetail = false;
+  showPropertyDetail = signal<boolean>(false);
 
   ngOnInit() {
     this.filteredProperties.set([...this.properties]);
@@ -837,14 +837,14 @@ export class AvailableRentals {
 
   openPropertyDetail(property: Property) {
     this.selectedProperty = property;
-    this.showPropertyDetail = true;
+    this.showPropertyDetail.set(true);
     // Prevent body scroll when modal is open
     this.document.body.style.overflow = 'hidden';
   }
 
   closePropertyDetail() {
     this.selectedProperty = null;
-    this.showPropertyDetail = false;
+    this.showPropertyDetail.set(false);
     // Restore body scroll
     this.document.body.style.overflow = 'auto';
   }

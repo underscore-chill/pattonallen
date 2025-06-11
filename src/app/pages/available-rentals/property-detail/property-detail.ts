@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, Output, EventEmitter, output, input, signal } from '@angular/core';
+import { CommonModule, DecimalPipe } from '@angular/common';
 
 interface Property {
   id: number;
@@ -20,48 +20,49 @@ interface Property {
 @Component({
   selector: 'app-property-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [DecimalPipe],
   templateUrl: './property-detail.html',
   styleUrls: ['./property-detail.css'],
 })
 export class PropertyDetail {
-  @Input() property: Property | null = null;
-  @Input() isVisible = false;
-  @Output() close = new EventEmitter<void>();
+  property = input<Property | null>(null);
+  isVisible = input<boolean>(false);
+  close = output<void>();
 
-  currentImageIndex = 0;
+  currentImageIndex = signal<number>(0);
 
   nextImage() {
+    const property = this.property();
     if (
-      this.property &&
-      this.currentImageIndex < this.property.images.length - 1
+      property &&
+      this.currentImageIndex() < property.images.length - 1
     ) {
-      this.currentImageIndex++;
+      this.currentImageIndex.update((index) => index + 1);
     }
   }
 
   previousImage() {
-    if (this.currentImageIndex > 0) {
-      this.currentImageIndex--;
+    if (this.currentImageIndex() > 0) {
+      this.currentImageIndex.update((index) => index - 1);
     }
   }
 
   selectImage(index: number) {
-    this.currentImageIndex = index;
+    this.currentImageIndex.set(index);
   }
 
   onClose() {
-    this.currentImageIndex = 0;
+    this.currentImageIndex.set(0);
     this.close.emit();
   }
 
   scheduleViewing() {
-    console.log('Schedule viewing for:', this.property?.title);
+    console.log('Schedule viewing for:', this.property()?.title);
     // Implement scheduling logic
   }
 
   submitApplication() {
-    console.log('Submit application for:', this.property?.title);
+    console.log('Submit application for:', this.property()?.title);
     // Implement application logic
   }
 }
