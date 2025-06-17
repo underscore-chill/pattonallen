@@ -5,7 +5,6 @@ import { RouterLink } from '@angular/router';
   selector: 'lexigray-footer',
   imports: [RouterLink],
   templateUrl: './footer.html',
-  styleUrl: './footer.css',
 })
 export class Footer {
   year = new Date().getFullYear();

@@ -17,4 +17,5 @@
 .aspect-w-4 > img {
   object-fit: cover;
   object-position: center;
+  /* color: #22222200; */
 }
