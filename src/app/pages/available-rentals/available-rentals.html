@@ -305,10 +305,11 @@
         <!-- Map View Placeholder -->
         <div class="w-full h-fit bg-white rounded-lg shadow-sm p-8 text-center">
           <iframe
-          class="w-full h-80 md:h-[35rem] rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.0129341799798!2d-82.57703562418772!3d35.57807257262078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88598cb871a4c9ad%3A0x352f6bef1fffdd33!2s264%20Haywood%20Rd%2C%20Asheville%2C%20NC%2028806%2C%20USA!5e0!3m2!1sen!2sng!4v1749327828677!5m2!1sen!2sng"
+            class="w-full rounded-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3253.3936900390886!2d-77.94924172419692!3d35.370690472689056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac01c1480d3709%3A0xd1b34c492b88de9c!2s2719%20Graves%20Dr%2C%20Goldsboro%2C%20NC%2027534%2C%20USA!5e0!3m2!1sen!2sng!4v1750242790322!5m2!1sen!2sng"
+            height="700"
             style="border: 0"
-            allowfullscreen="true"
+            allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
@@ -338,7 +339,7 @@
 <!-- Property Detail Modal -->
 <app-property-detail
   [property]="selectedProperty"
-  [isVisible]="showPropertyDetail"
+  [isVisible]="showPropertyDetail()"
   (close)="closePropertyDetail()"
 >
 </app-property-detail>
