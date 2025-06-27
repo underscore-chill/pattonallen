@@ -26,7 +26,7 @@ export class About {
             changes in our fast-paced local market. As a member of the National
             Association of Residential Property Managers, Irene is always
             focused on expanding her knowledge and understanding in this field.
-            She joined LEXI GRAY PROPERTY MANAGEMENT, LLC because she aligned deeply with their
+            She joined LEXI GRAY PROPERTY MANAGEMENT because she aligned deeply with their
             dedication to providing an extraordinary experience to both owners
             and tenants, and because of the company's commitment to supporting
             the local community.`,
@@ -34,7 +34,7 @@ export class About {
     {
       nameAndRole: 'Satorria Jones, Finance Manager',
       image: '/images/team-two.jpg',
-      bio: 'Satorria was born and raised in Asheville, NC. She completed her undergraduate studies at The University of North Carolina at Pembroke and wrapped up her master’s degree this year. She joined the LEXI GRAY PROPERTY MANAGEMENT, LLC team as the Administrative Coordinator and quickly worked her way up to the Finance Manager role thanks to her past administrative experience in the automotive industry and advanced schooling in accounting. Outside of the workplace she loves to spend time with her son Kane, binge watch crime shows, read, and cook big Sunday dinners.',
+      bio: 'Satorria was born and raised in Asheville, NC. She completed her undergraduate studies at The University of North Carolina at Pembroke and wrapped up her master’s degree this year. She joined the LEXI GRAY PROPERTY MANAGEMENT team as the Administrative Coordinator and quickly worked her way up to the Finance Manager role thanks to her past administrative experience in the automotive industry and advanced schooling in accounting. Outside of the workplace she loves to spend time with her son Kane, binge watch crime shows, read, and cook big Sunday dinners.',
     },
     {
       nameAndRole: 'Todd Rullman, Assistant Property Manager',
@@ -44,7 +44,7 @@ export class About {
     {
       nameAndRole: 'Desaree Jennings, Tenant Services Coordinator',
       image: '/images/team-three.jpg',
-      bio: 'Desaree is a born and raised Asheville native who worked in food service all around Asheville before joining LEXI GRAY PROPERTY MANAGEMENT, LLC. Her experience in hospitality coupled with her bachelor’s in English received from the UNC Asheville have facilitated her commitment to clear, informative, and compassionate communication with all people. Desaree’s favorite hobby is having hobbies, whether that be hiking, reading, knitting, weightlifting, paddleboarding, or just hanging out with her cat.',
+      bio: 'Desaree is a born and raised Asheville native who worked in food service all around Asheville before joining LEXI GRAY PROPERTY MANAGEMENT. Her experience in hospitality coupled with her bachelor’s in English received from the UNC Asheville have facilitated her commitment to clear, informative, and compassionate communication with all people. Desaree’s favorite hobby is having hobbies, whether that be hiking, reading, knitting, weightlifting, paddleboarding, or just hanging out with her cat.',
     },
     {
       nameAndRole: 'Lemuel Overton, Customer Service Specialist',
