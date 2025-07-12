@@ -760,13 +760,16 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
   },
   {
     id: 21,
-    title: 'Waterfront 2BR Condo',
-    address: '345 Lake View Terrace',
-    bedrooms: 2,
-    bathrooms: 2.0,
-    rent: 1475,
+    title:
+      'Welcome to this spacious and inviting home located in desirable Indian Trail, NC! This expansive 5-bedroom home offers all bedrooms upstairs.',
+    address: '5006 Rosewater Ln, Indian Trail, NC 28079',
+    bedrooms: 5,
+    bathrooms: 2.5,
+    rent: 3100,
+    every: 'mon',
+    sqrFt: '3,209',
     availableDate: '8/14/2025',
-    propertyType: 'Condo',
+    propertyType: 'Duplex',
     image: '/images/properties/twenty-one/1.webp',
     images: [
       '/images/properties/twenty-one/1.webp',
@@ -800,16 +803,48 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-one/29.webp',
       '/images/properties/twenty-one/30.webp',
     ],
-    description:
-      'Scenic waterfront condo with private balcony overlooking the lake. Premium finishes, fireplace, and access to community dock and recreational facilities. Includes boat slip and swimming pool privileges.',
+    description: `Welcome to this spacious and inviting home located in desirable Indian Trail, NC! This expansive 5-bedroom home offers all bedrooms upstairs. Enjoy the spacious primary suite, complete with a walk-in closet and a luxurious ensuite featuring a relaxing garden tub, a sleek walk-in shower with elegant tile surround, and a dual vanity, offering both style and convenience. The main level boasts impressive formal living and dining rooms, perfect for entertaining, as well as a home office for added convenience. The kitchen is a chef's dream with an island, ample countertop space, and custom cabinetry. Enjoy the serene view of the private, wooded backyard from the sunroom, a perfect spot to relax. The neighborhood offers fantastic amenities, including two pools, walking trails, playgrounds, and a stocked lake.
+
+RESIDENTS BENEFIT PACKAGE - $35 per month
+Your Resident Benefit Package is included with ALL lease agreements and includes the following:
+
+ Convenient Lock Box Move-In
+ Secure Online Rental Payments
+ Online Resident Portal Access
+ 24/7 Maintenance Online Portal
+ On-Time Credit Reporting of Rental Payments Reporting to Experian
+ Insurance administration
+ Home Buyers program Discounted Sales Commission
+ Documents Storage and Retrieval
+ Move Out Security Deposit Report Processing with Pictures
+ HVAC Air Filters delivered to your home every other month
+ Utilities Concierge Set up
+ Waiver of One Late Fee
+ Waiver of One NSF fee
+
+Note: Resident Benefits Package is REQUIRED with all lease agreements with Carolina Property Management Services. Resident Benefits Package will be billed as one charge on a monthly basis.
+
+ATTENTION: This property is managed by Carolina Property Management, LLC. BE CAREFUL OF SCAMS!
+Do not provide your lockbox code to anyone if asked. Do not submit applications with your personal information or deposit funds unless you're sure it's to Carolina Property Management. If you see this property listed by anyone other than Carolina Property Management for a different price, be aware that is A SCAM!
+
+Before leasing, please contact the school district for zoning information
+
+Beware of Scammers! Consider the following points*:
+1. Carolina Property Management acts as the Property Manager for this property and ONLY we are responsible to lease it. The owner(s) will not seek to lease the house on their own. If someone contacts you claiming to be the owner, they are probably trying to steal your money or personal information.
+2. We do not list our properties on Craigslist.
+3.
+4. We will always lease the property for exactly the price and deposit required posted on Tenant Turner and our official website.
+5. We will never ask you to wire money or to take the key from the Smart Digital lockbox device to move in.`,
   },
   {
     id: 22,
-    title: 'Compact 1BR Near Hospital',
-    address: '678 Medical Center Drive',
-    bedrooms: 1,
-    bathrooms: 1.0,
-    rent: 825,
+    title: 'About 1041 Mica Lamp Ct',
+    address: '1041 Mica Lamp Ct,Apex, NC 27502',
+    bedrooms: 2,
+    bathrooms: 2.5,
+    rent: 1850,
+    every: 'mon',
+    sqrFt: '1365',
     availableDate: '7/26/2025',
     propertyType: 'Apartment',
     image: '/images/properties/twenty-two/1.jpg',
@@ -836,16 +871,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-two/21.jpg',
       '/images/properties/twenty-two/22.jpg',
     ],
-    description:
-      'Convenient apartment for medical professionals, walking distance to Wayne UNC Health Care. Clean, efficient layout with updated fixtures, on-site parking, and 24-hour security. Perfect for hospital staff and residents.',
+    description: `Gleaming hardwood floors on the first floor & NEW carpet upstairs. Painted SW City Loft! FIREPLACE unit! Two spacious 'master' bedrooms up, each with a private bath. Situated at the park-like setting at the back of a cul-de-sac, just across from the neighborhood green, and just a short walking distance to the pool, tennis, basketball, & volleyball. Washer/dryer included. NO PETS!`,
   },
   {
     id: 23,
-    title: 'Luxury 5BR Executive Estate',
-    address: '1001 Mansion Hill Drive',
-    bedrooms: 5,
-    bathrooms: 4.5,
-    rent: 2750,
+    title: 'ABODE Alderwood ',
+    address: '2513 Canarywood Ln,Apex, NC 27523',
+    bedrooms: 3,
+    bathrooms: 2.5,
+    rent: 2399,
+    every: 'mon',
+    sqrFt: '1,647-1,918',
     availableDate: '8/30/2025',
     propertyType: 'House',
     image: '/images/properties/twenty-three/1.webp',
@@ -867,16 +903,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-three/16.webp',
       '/images/properties/twenty-three/17.webp',
     ],
-    description:
-      'Magnificent executive estate with 5 bedrooms, gourmet kitchen, library, and home theater. Swimming pool, 3-car garage, and professionally landscaped grounds. Premium location in gated community with 24/7 security.',
+    description: `Welcome to ABODE at Alderwood! Our multi-level townhomes for lease feature three bedrooms, spacious floor plans, and contemporary kitchens designed just for you. Located on Jenks Road and Wimberly Road, our peaceful location is just a 5-minute drive to Beaver Creek Crossing, fantastic restaurants, grocery stores, and beautiful walking trails. Our on-site professional management team takes care of each home as if it were their own. Why wait? Come and experience the luxury lifestyle that awaits you at ABODE at Alderwood! We can't wait to welcome you home.`,
   },
   {
     id: 24,
-    title: 'Affordable 3BR Duplex',
-    address: '432 Elm Street',
-    bedrooms: 3,
-    bathrooms: 1.5,
-    rent: 1075,
+    title: 'About 8328 Henderson Rd Unit 4',
+    address: '8328 Henderson Rd Unit 4,Apex, NC 27539',
+    bedrooms: 1,
+    bathrooms: 1,
+    rent: 850,
+    every: 'mon',
+    sqrFt: '250',
     availableDate: '8/3/2025',
     propertyType: 'Duplex',
     image: '/images/properties/twenty-four/1.jpg',
@@ -894,16 +931,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-four/11.jpg',
       '/images/properties/twenty-four/12.jpg',
     ],
-    description:
-      'Well-maintained duplex with three bedrooms and private entrance. Good-sized living area, dining room, and kitchen with appliances. Shared laundry facility, parking space, and small yard area for outdoor activities.',
+    description: `Amazing spacious bedroom, private bathroom and kitchenette in a gorgeous house in beautiful peaceful and convenient Apex/Cary/Holly Springs area. Amenities included: central air/heat, deck, hardwood floors, washer/dryer, and spacious yard, beautiful 4 acre wooded surrounding area. Utilities included: internet/Wi-Fi, electricity, and water. The house is shared with three flat mates. No smoking, drinking, recreational drugs, or parties and no regular overnight guests. No pets. Credit and criminal record will be checked. The property is managed by a responsible landlord using Avail landlord software. Available Now. $850 /month rent. $300 refundable security deposit required. If interested, contact via email at janethpearl50@gmail.com and give your contact phone or email to learn more. Always goes fast so don't risk missing a super place. Nothing else like it out there.`,
   },
   {
     id: 25,
-    title: 'Modern 2BR Near Shopping',
-    address: '876 Retail Plaza Boulevard',
-    bedrooms: 2,
-    bathrooms: 2.0,
-    rent: 1225,
+    title: 'About 830 New Derby Ln',
+    address: '830 New Derby Ln,Apex, NC 27523',
+    bedrooms: 3,
+    bathrooms: 2.5,
+    rent: 2250,
+    every: 'mon',
+    sqrFt: '-',
     availableDate: '7/14/2025',
     propertyType: 'Apartment',
     image: '/images/properties/twenty-five/1.jpg',
@@ -926,16 +964,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-five/16.jpg',
       '/images/properties/twenty-five/17.jpg',
     ],
-    description:
-      'Contemporary apartment complex near Berkeley Mall and major retailers. Two bedrooms with walk-in closets, modern kitchen with breakfast bar, and in-unit washer/dryer. Complex amenities include gym and pool.',
+    description: `Discover the perfect blend of comfort and convenience at 830 New Derby Lane in Apex, NC. This charming end-unit townhouse offers 3 bedrooms and 2.5 bathrooms, providing ample space for relaxation and entertainment. Built in 2018, the property boasts a modern design with an open floor plan accentuated by 9-foot ceilings and elegant hardwood flooring on the first floor.The kitchen features granite countertops, stainless steel appliances, and a gas range, making meal preparation a delight. The owner's suite offers a tranquil retreat with a spacious walk-in closet and a double vanity in the ensuite bathroom.Situated in the desirable Salem Pointe neighborhood, this home is ideally located just 2 miles from downtown Apex, offering easy access to shopping, dining, and entertainment. Nature enthusiasts will appreciate being less than a mile from Apex Community Park, perfect for outdoor activities. Commuters will benefit from the property's proximity to US-64 and I-540, making travel a breeze.Perfect for families or professionals seeking a welcoming community, this townhouse includes a generous 2-car garage. Available August 1st.Listing agent is the property owner`,
   },
   {
     id: 26,
-    title: 'Country Style 3BR Home',
-    address: '5643 Rural Route 15',
+    title: 'About 328 Carolina Springs Blvd',
+    address: '328 Carolina Springs Blvd,Apex, NC 27539',
     bedrooms: 3,
-    bathrooms: 2.0,
-    rent: 1175,
+    bathrooms: 3.5,
+    rent: 1950,
+    every: 'mon',
+    sqrFt: '-',
     availableDate: '8/22/2025',
     propertyType: 'House',
     image: '/images/properties/twenty-six/1.jpg',
@@ -964,16 +1003,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-six/23.jpg',
       '/images/properties/twenty-six/24.jpg',
     ],
-    description:
-      'Peaceful country home on large lot with mature trees and garden space. Wraparound porch, wood-burning fireplace, and eat-in kitchen. Detached garage/workshop, well water, and septic system. Perfect for those seeking rural tranquility.',
+    description: `This versatile 3-bedroom, 3.5-bathroom townhome offers a spacious open floorplan designed for modern living. The first-floor guest suite with a full bath provides flexibility as a private home office or comfortable guest space. Enjoy access to fantastic community amenities including a pool and fitness center. Explore the great outdoors with hiking trails, water sports at nearby Jordan Lake, and local parks and playgrounds for all ages. Perfectly positioned in a prime location, this home offers convenient access to Highway 64, Research Triangle Park, RDU International Airport, the vibrant downtown of Apex, and Chapel Hill.`,
   },
   {
     id: 27,
-    title: 'Updated 1BR Garden Apartment',
-    address: '234 Garden Court',
-    bedrooms: 1,
-    bathrooms: 1.0,
-    rent: 775,
+    title: 'About Oxford Square',
+    address: 'Oxford Square 1000 Village Greenway,Cary, NC 27511',
+    bedrooms: 3,
+    bathrooms: 1.5,
+    rent: 1125,
+    every: 'mon',
+    sqrFt: '-',
     availableDate: '7/19/2025',
     propertyType: 'Apartment',
     image: '/images/properties/twenty-seven/1.webp',
@@ -1031,15 +1071,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-seven/52.webp',
     ],
     description:
-      'Ground-floor garden apartment with private patio and direct outdoor access. Recently updated with new carpet, paint, and fixtures. Quiet complex with landscaped grounds, pool, and community laundry facilities.',
+      'The best apartments in Cary, NC are for rent at Oxford Square. Our one-bedroom apartments, two-bedroom apartments, and three-bedroom apartments are clean and modern, featuring private patio and balcony options, large closets, and newly remodeled laundry facilities. If you want to experience the very best one-, two-, and three-bedroom apartments in Cary, NC, rent with Oxford Square Apartments.',
   },
   {
     id: 28,
-    title: 'Spacious 4BR Split Level',
-    address: '987 Hillcrest Drive',
-    bedrooms: 4,
+    title: 'The Preserve 411 Gregory Dr,Cary, NC 27513',
+    address: 'The Preserve 411 Gregory Dr, Cary, NC 27513',
+    bedrooms: 3,
     bathrooms: 2.5,
-    rent: 1625,
+    rent: 1470,
+    every: 'mon',
+    sqrFt: '1,154-1,705',
     availableDate: '8/7/2025',
     propertyType: 'House',
     image: '/images/properties/twenty-eight/1.webp',
@@ -1079,15 +1121,18 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-eight/34.webp',
     ],
     description:
-      'Multi-level home with four bedrooms, family room with fireplace, and finished basement recreation area. Large kitchen with dining space, master suite, and two-car carport. Mature landscaping and storage shed included.',
+      'The Preserve is a community of townhomes and single-family homes in Cary, North Carolina. The Preserve offers a variety of floor plans, including one-, two-, and three-bedroom apartments, as well as two- and three-bedroom townhomes. The community features a clubhouse, fitness center, swimming pool, and playground. The Preserve is conveniently located near shopping, dining, and entertainment options.',
   },
   {
     id: 29,
-    title: 'Cozy 2BR Cottage',
-    address: '543 Magnolia Street',
-    bedrooms: 2,
-    bathrooms: 1.0,
-    rent: 925,
+    title: 'About Raleigh - Cary - Regency Parkway South',
+    address:
+      'Raleigh - Cary - Regency Parkway South3100 Regency Pkwy,Cary, NC 27518',
+    bedrooms: 0,
+    bathrooms: 1,
+    rent: 1499,
+    every: 'mon',
+    sqrFt: '300',
     availableDate: '8/11/2025',
     propertyType: 'House',
     image: '/images/properties/twenty-nine/1.webp',
@@ -1117,18 +1162,19 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/twenty-nine/24.webp',
       '/images/properties/twenty-nine/25.webp',
     ],
-    description:
-      'Charming cottage with original hardwood floors and vintage character. Two comfortable bedrooms, updated kitchen, and cozy living area with built-in shelving. Private backyard with garden space and covered parking.',
+    description: `Enjoy a fully furnished studio suite in our hotel at an affordable rate with free wi-fi, free utilities and free premium cable. Each studio suite has a full kitchen with full-size refrigerator, stovetop and microwave, and has a flexible workspace and plenty of storage. All our hotels are pet-friendly and have on-site guest laundry available. Plus, there are no long-term commitments and you can adjust your length of stay to meet your individual needs, subject to applicable property and/or local restrictions. Additional fees may apply. Booking restrictions and taxes apply. Rates and availability are subject to change without notice.`,
   },
   {
     id: 30,
-    title: 'Executive 3BR Townhome',
-    address: '321 Executive Square',
-    bedrooms: 3,
+    title: 'About 414 Hilltop View St',
+    address: '414 Hilltop View St,Cary, NC 27513',
+    bedrooms: 4,
     bathrooms: 2.5,
-    rent: 1525,
+    rent: 2550,
+    every: 'mon',
+    sqrFt: '-',
     availableDate: '8/28/2025',
-    propertyType: 'Townhouse',
+    propertyType: 'Family Home',
     image: '/images/properties/thirty/1.jpg',
     images: [
       '/images/properties/thirty/1.jpg',
@@ -1149,16 +1195,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/thirty/17.jpg',
       '/images/properties/thirty/18.jpg',
     ],
-    description:
-      'Upscale townhome in executive complex with attached garage and private entrance. Three levels of living space, master suite with vaulted ceiling, and gourmet kitchen with island. Community amenities include tennis court and clubhouse.',
+    description: `Introducing a charming 4-bedroom, 2.5-bathroom single family home located in the desirable Cary, NC area. This spacious home boosts over 2600sf of living space. Granite countertops add a touch of elegance to the space which includes a 3rd level loft and office space. Residents can enjoy access to the community pool, perfect for relaxing and unwinding on hot summer days. Additionally, the house is situated near a scenic walking trail, providing a peaceful and serene environment for outdoor enthusiasts. Don't miss out on the opportunity to make this house your new home sweet home in Cary! -No Pets-No Smoking/Vaping-Washer/Dryer hook ups`,
   },
   {
     id: 31,
-    title: 'Updated 1BR Garden Apartment',
-    address: '234 Garden Court',
-    bedrooms: 1,
-    bathrooms: 1.0,
-    rent: 775,
+    title: 'About 6121 Sunpointe Dr',
+    address: '6121 Sunpointe Dr,Raleigh, NC 27606',
+    bedrooms: 2,
+    bathrooms: 2,
+    rent: 1400,
+    every: 'mon',
+    sqrFt: '1,235',
     availableDate: '7/19/2025',
     propertyType: 'Apartment',
     image: '/images/properties/thirty-one/1.png',
@@ -1176,16 +1223,18 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/thirty-one/12.jpg',
       '/images/properties/thirty-one/13.jpg',
     ],
-    description:
-      'Ground-floor garden apartment with private patio and direct outdoor access. Recently updated with new carpet, paint, and fixtures. Quiet complex with landscaped grounds, pool, and community laundry facilities.',
+    description: `Spacious top floor condo in peaceful Sunpointe community in ideal location convenient to I-40, I-440, Crossroads Plaza, Cary, and Raleigh! Neutral paint and LVP flooring throughout living space and bedrooms. Kitchen offers plenty of storage space and separate breakfast area. Two bedrooms with their own private full bathrooms and plenty of vanity space in each. Access to community pool included! Sliding glass doors open to balcony for outdoor entertainment. Refrigerator, washer, and dryer included! Primary/En-Suite bathroom shower is to be remodeled.`,
   },
   {
     id: 32,
-    title: 'Spacious 4BR Split Level',
-    address: '987 Hillcrest Drive',
-    bedrooms: 4,
-    bathrooms: 2.5,
-    rent: 1625,
+    title: 'About 208 Oakhurst St',
+    address: '208 Oakhurst St,Kernersville, NC 27284',
+    bedrooms: 2,
+    bathrooms: 1,
+    rent: 1500,
+    every: 'mon',
+    sqrFt: '-',
+
     availableDate: '8/7/2025',
     propertyType: 'House',
     image: '/images/properties/thirty-two/1.jpg',
@@ -1215,16 +1264,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/thirty-two/24.jpg',
       '/images/properties/thirty-two/25.jpg',
     ],
-    description:
-      'Multi-level home with four bedrooms, family room with fireplace, and finished basement recreation area. Large kitchen with dining space, master suite, and two-car carport. Mature landscaping and storage shed included.',
+    description: `Welcome to this adorable 2-bedroom, 1-bathroom home in the heart of Kernersville, NC, offering convenience, comfort, and a welcoming layout. The spacious living area flows into a well-equipped kitchen with essential appliances, making everyday living easy and efficient.Enjoy the convenience of an in-unit washer and dryer, along with high-speed WiFi for work or streaming. The primary bedroom offers generous space, while the second bedroom is ideal for guests, a home office, or additional storage.Utilities are included, providing a hassle-free living experience in a location close to shopping, dining, and local amenities.Contact for availability and application details.`,
   },
   {
     id: 33,
-    title: 'Cozy 2BR Cottage',
-    address: '543 Magnolia Street',
+    title: 'About Hawthorne at New Centre',
+    address: 'Hawthorne at New Centre 137 Dapple Ct, Wilmington, NC 28403',
     bedrooms: 2,
-    bathrooms: 1.0,
+    bathrooms: 2,
     rent: 925,
+    every: 'mon',
+    sqrFt: '550-1,000',
     availableDate: '8/11/2025',
     propertyType: 'House',
     image: '/images/properties/thirty-three/1.webp',
@@ -1255,15 +1305,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/thirty-three/25.webp',
     ],
     description:
-      'Charming cottage with original hardwood floors and vintage character. Two comfortable bedrooms, updated kitchen, and cozy living area with built-in shelving. Private backyard with garden space and covered parking.',
+      'Come experience Hawthorne at New Centre in Wilmington, NC and let us show you how to Live the Difference! Hawthorne at New Centre is located directly off South College Road and Highway 117 in the heart of Wilmington less than one mile from UNC-Wilmington and only minutes from Independence Mall, Downtown Wilmington and Wrightsville Beach.Our apartment community is close to the most sought-after attractions Wilmington has to offer as well as the areas best dining, shopping and entertainment. Hawthorne at New Centre offers unique loft-style one bedroom and spacious two bedroom apartment homes with newly renovated interiors that include modern kitchens with energy efficient appliances, and upgraded lighting, just to name a few of the amenities we offer our residents.',
   },
   {
     id: 34,
-    title: 'Executive 3BR Townhome',
-    address: '321 Executive Square',
-    bedrooms: 3,
-    bathrooms: 2.5,
-    rent: 1525,
+    title: 'About Urban Oasis',
+    address: 'Urban Oasis 608 Castle St, Wilmington, NC 28401',
+    bedrooms: 2,
+    bathrooms: 2,
+    rent: 1500,
+    every: 'mon',
+    sqrFt: '890',
     availableDate: '8/28/2025',
     propertyType: 'Townhouse',
     image: '/images/properties/thirty-four/1.webp',
@@ -1286,16 +1338,17 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/thirty-four/17.webp',
       '/images/properties/thirty-four/18.webp',
     ],
-    description:
-      'Upscale townhome in executive complex with attached garage and private entrance. Three levels of living space, master suite with vaulted ceiling, and gourmet kitchen with island. Community amenities include tennis court and clubhouse.',
+    description: `Urban Oasis was built in 2015 and is located in the popular Castle Street District. Each apartment has its own in-unit washer and dryer and central air conditioning. The complex provides the security of gated access, off street parking and is pet friendly with some restrictions. Tenant is responsible for all utilities. Close distance to many shops, restaurants and the River Walk. Trolley stop is only 1 block away. This apartment is in the perfect spot for enjoying all that downtown Wilmington has to offer! The complex is professionally managed with 24 hour on-call service and a convenient tenant portal where rent can be paid and work orders can be placed digitally.`,
   },
   {
     id: 35,
-    title: 'Executive 3BR Townhome',
-    address: '321 Executive Square',
+    title: 'About Hawthorne at Oleander',
+    address: 'Hawthorne at Oleander 3529 Adirondack Way,Wilmington, NC 28403',
     bedrooms: 3,
-    bathrooms: 2.5,
-    rent: 1525,
+    bathrooms: 2,
+    rent: 1627,
+    every: 'mon',
+    sqrFt: '851-1,372',
     availableDate: '8/28/2025',
     propertyType: 'Townhouse',
     image: '/images/properties/thirty-five/1.webp',
@@ -1352,6 +1405,6 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
       '/images/properties/thirty-five/51.webp',
     ],
     description:
-      'Upscale townhome in executive complex with attached garage and private entrance. Three levels of living space, master suite with vaulted ceiling, and gourmet kitchen with island. Community amenities include tennis court and clubhouse.',
+      'Move-in by July 1st to receive one month free!Look & Lease Special: Apply within 48 hours of your initial tour and receive off the admin fee.Restrictions apply. Contact the office for details.',
   },
 ];
