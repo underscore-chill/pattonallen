@@ -20,6 +20,7 @@ export const properties: Property[] = [
     title: 'Spacious 3BR House Near Downtown Goldsboro',
     address: '1205 E Walnut Street',
     city: 'Goldsboro',
+    
     zipCode: '27534',
     bedrooms: 3,
     bathrooms: 2.0,
