@@ -161,9 +161,9 @@
               (ngModelChange)="onFilterChange()"
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
-              <option *ngFor="let option of sortOptions" [value]="option">
-                {{ option }}
-              </option>
+              @for(option of sortOptions; track $index) {
+              <option [value]="option">{{ option }}</option>
+              }
             </select>
           </div>
         </div>
@@ -224,10 +224,7 @@
                   {{ property.title }}
                 </h3>
 
-                <p class="text-gray-600 my-2">
-                  {{ property.address }} {{ property.city }}, NC {{
-                  property.zipCode }}
-                </p>
+                <p class="text-gray-600 my-2">{{ property.address }}</p>
 
                 <div class="flex items-center space-x-4 mb-4">
                   <span class="text-gray-700"
@@ -239,7 +236,7 @@
                 </div>
 
                 <p class="text-gray-600 mb-4">
-                  Available: {{ property.availableDate }}
+                  Square feet: {{ property.sqrFt || 'N/A' }}
                 </p>
 
                 <div class="mb-4">
@@ -282,7 +279,7 @@
                 class="flex flex-col items-start md:items-end justify-between space-y-2"
               >
                 <span class="text-2xl font-bold text-gray-900"
-                  >${{ property.rent | number }}</span
+                  >{{ property.rent |  currency  }}</span
                 >
                 <button
                   (click)="scheduleViewing(property)"

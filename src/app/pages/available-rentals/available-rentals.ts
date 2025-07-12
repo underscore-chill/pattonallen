@@ -1,5 +1,5 @@
 import { Component, DOCUMENT, inject, signal } from '@angular/core';
-import { CommonModule, DecimalPipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { PropertyDetail } from './property-detail/property-detail';
@@ -8,7 +8,7 @@ import { properties, Property } from '../../../data/properties';
 @Component({
   selector: 'app-available-rentals',
   standalone: true,
-  imports: [RouterModule, FormsModule, PropertyDetail, DecimalPipe],
+  imports: [RouterModule, FormsModule, PropertyDetail, CurrencyPipe],
   templateUrl: './available-rentals.html',
   styleUrls: ['./available-rentals.css'],
 })
@@ -80,18 +80,16 @@ export class AvailableRentals {
           !this.searchTerm ||
           property.address
             .toLowerCase()
-            .includes(this.searchTerm.toLowerCase()) ||
-          property.city.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-          property.zipCode.includes(this.searchTerm);
+            .includes(this.searchTerm.toLowerCase());
 
         const matchesCity =
-          !this.selectedCity ||
-          this.selectedCity === 'All Cities' ||
-          property.city === this.selectedCity;
+          !this.selectedCity || this.selectedCity === 'All Cities';
+
         const matchesPropertyType =
           !this.selectedPropertyType ||
           this.selectedPropertyType === 'All Types' ||
           property.propertyType === this.selectedPropertyType;
+
         const matchesBedrooms =
           !this.selectedBedrooms ||
           this.selectedBedrooms === 'Any' ||

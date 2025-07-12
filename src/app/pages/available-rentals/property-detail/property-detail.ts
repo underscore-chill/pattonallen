@@ -1,15 +1,15 @@
-import { Component, Input, Output, EventEmitter, output, input, signal } from '@angular/core';
-import { CommonModule, DecimalPipe } from '@angular/common';
+import { Component, output, input, signal } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 
 interface Property {
   id: number;
   title: string;
   address: string;
-  city: string;
-  zipCode: string;
   bedrooms: number;
   bathrooms: number;
   rent: number;
+  every?: string;
+  sqrFt?: string;
   availableDate: string;
   propertyType: string;
   image: string;
@@ -20,7 +20,7 @@ interface Property {
 @Component({
   selector: 'app-property-detail',
   standalone: true,
-  imports: [DecimalPipe],
+  imports: [CurrencyPipe],
   templateUrl: './property-detail.html',
   styleUrls: ['./property-detail.css'],
 })
@@ -33,10 +33,7 @@ export class PropertyDetail {
 
   nextImage() {
     const property = this.property();
-    if (
-      property &&
-      this.currentImageIndex() < property.images.length - 1
-    ) {
+    if (property && this.currentImageIndex() < property.images.length - 1) {
       this.currentImageIndex.update((index) => index + 1);
     }
   }

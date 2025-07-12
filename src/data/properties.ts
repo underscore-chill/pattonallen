@@ -2,11 +2,11 @@ export interface Property {
   id: number;
   title: string;
   address: string;
-  city: string;
-  zipCode: string;
   bedrooms: number;
   bathrooms: number;
   rent: number;
+  every?: string;
+  sqrFt?: string;
   availableDate: string;
   propertyType: string;
   image: string;
@@ -17,14 +17,13 @@ export interface Property {
 export const properties: Property[] = [
   {
     id: 1,
-    title: 'Spacious 3BR House Near Downtown Goldsboro',
-    address: '1205 E Walnut Street',
-    city: 'Goldsboro',
-    
-    zipCode: '27534',
-    bedrooms: 3,
-    bathrooms: 2.0,
-    rent: 1350,
+    title: 'About 610 Market St #303',
+    address: `610 Market St #303, Chapel Hill, NC 27516`,
+    bedrooms: 2,
+    bathrooms: 2,
+    rent: 1850,
+    sqrFt: '1,153',
+    every: 'mon',
     availableDate: '7/15/2025',
     propertyType: 'House',
     image: '/images/properties/one/1.jpg',
@@ -42,17 +41,17 @@ export const properties: Property[] = [
       '/images/properties/one/11.jpg',
     ],
     description:
-      'Beautiful 3-bedroom house with updated kitchen, hardwood floors, and large backyard. Close to downtown Goldsboro with easy access to shopping and dining. Features central air, washer/dryer hookups, and off-street parking.',
+      'Southern Village Condo overlooking the main square on Market Street. 2 Bedrooms/2 Bathrooms. All electric heat and air conditioning. Carpeted, granite countertops. Comes with stove, refrigerator, microwave, dishwasher, stack washer/dryer. Lots of natural light. Patio that overlooks village green. Lots of closet space. Secured entrance. Walk to movie theatre, restaurants, bank, and shopping. Bus line. Contact Carolina Realty of Chapel Hill. Application fee: $50',
   },
   {
     id: 2,
-    title: 'Modern 2BD Apartment with Amenities',
-    address: '2840 Wayne Memorial Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
-    bedrooms: 2,
-    bathrooms: 2.0,
-    rent: 1150,
+    title: 'About 118 Philips Sq',
+    address: '118 Philips Sq,Chapel Hill, NC 27516',
+    bedrooms: 1,
+    bathrooms: 1,
+    rent: 768,
+    every: 'mon',
+    sqrFt: '1,840',
     availableDate: '8/1/2025',
     propertyType: 'Apartment',
     image: '/images/properties/two/1.jpg',
@@ -75,18 +74,18 @@ export const properties: Property[] = [
       '/images/properties/two/17.jpg',
     ],
     description:
-      'Contemporary 2-bedroom apartment with granite countertops, stainless steel appliances, and in-unit laundry. Complex features pool, fitness center, and covered parking. Pet-friendly with fenced dog park.',
+      'Find more available rooms for rent at Alcove Rooms. This is a room for rent in a shared home with roommates on long-term leases. One is moving out and a room is opening up. Do not visit the property without first contacting us to schedule a tour at the number below. Townhome in popular Winmore Community with rooms for rent. Features a spacious living room, bright and open kitchen, and a bedroom with full bath downstairs. Upstairs has 3 bedrooms including a master bedroom with large walk-in closet, master bath and laundry room. The home features many community amenities including a pool and cabana, playground, and walking trails. Less than 2 miles to UNC Chapel Hill and close to downtown Carrboro.',
   },
   {
     id: 3,
-    title: 'Charming 1BR Cottage Style Home',
-    address: '1156 N William Street',
-    city: 'Goldsboro',
-    zipCode: '27530',
-    bedrooms: 1,
-    bathrooms: 1.0,
-    rent: 850,
-    availableDate: '7/20/2025',
+    title: 'About 400 E Rosemary St #323',
+    address: '400 E Rosemary St #323,Chapel Hill, NC 27514',
+    bedrooms: 2,
+    bathrooms: 1,
+    rent: 1750,
+    every: 'mon',
+    sqrFt: '961',
+    availableDate: '',
     propertyType: 'House',
     image: '/images/properties/three/1.jpg',
     images: [
@@ -102,17 +101,17 @@ export const properties: Property[] = [
       '/images/properties/three/10.jpg',
     ],
     description:
-      'Cozy 1-bedroom cottage with original hardwood floors and vintage charm. Updated bathroom and kitchen, private patio, and garden area. Perfect for singles or couples seeking quiet neighborhood living.',
+      'Amazing 2 bedroom, 1 bathroom apartment in Chapel Hill. Amenities included: central air, central heat, dishwasher, hardwood floors, stainless steel appliance, and washer dryer. Utilities included: water. Is pet friendly. Walk to downtown Chapel Hill- Carrboro. Date Available: Aug 1st 2025. $1,750/month rent. $1,750 security deposit required. Please submit the form on this page or contact David at 919-945-4192 to learn more. This property is managed by a responsible landlord using Avail landlord software.',
   },
   {
     id: 4,
-    title: 'Luxury 4BR Executive Home',
-    address: '305 Country Club Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
+    title: 'About 202 Scarlett Dr',
+    address: '202 Scarlett Dr,Chapel Hill, NC 27517',
     bedrooms: 4,
-    bathrooms: 3.5,
-    rent: 2200,
+    bathrooms: 4.5,
+    rent: 3200,
+    every: 'mon',
+    sqrFt: '2194',
     availableDate: '8/15/2025',
     propertyType: 'House',
     image: '/images/properties/four/1.jpg',
@@ -131,18 +130,27 @@ export const properties: Property[] = [
       '/images/properties/four/13.jpg',
       '/images/properties/four/14.jpg',
     ],
-    description:
-      'Stunning executive home with gourmet kitchen, master suite with walk-in closet, bonus room, and 2-car garage. Located in prestigious neighborhood near country club. Features include marble countertops, custom cabinetry, and professionally landscaped yard.',
+    description: `This spacious 4-bedroom, 4.5-bath home is designed for students or families who want a quiet, high-quality place to live near UNC's campus. Every bedroom has a private bathroom. No sharing. No waiting. Great for graduate students, student athletes, or anyone who values privacy and convenience. Each bedroom has its own en-suite bathroom, so you won't be waiting in line or sharing your space.
+
+There's also a huge sunroom that wraps around the back of the house. It's perfect as a gym, study area, or even a fifth bedroom. The open living and dining area connects to a modern kitchen with granite counters, plenty of cabinets, and all appliances included, plus an in-unit washer and dryer.
+
+The location is ideal. Just a 6-10 minute drive to UNC, 15-20 minutes to Duke and Duke Hospital, and 20-25 minutes to RDU. The Chapel Hill Transit (free town bus) stop is right outside, and you can walk to Wegmans, cafes, and restaurants. Legion Road offers a quick back route to avoid 15-501 traffic.
+
+Available July 1, 2025. Rent is $3,200 per month. The security deposit is one month's rent. Flexible lease terms from 12 months to 2 years. Tenants cover utilities and yard maintenance. Parking fits 3 to 4 cars in the driveway, with plenty of street parking too.
+
+Perfect for a group of 4 roommates looking for comfort and independence. If you split rent evenly, it's about $800 each. One roommate might choose the oversized bedroom and chip in a bit more, but it's all flexible.
+
+Furnishing options are available for an added cost if preferred. Just ask when you reach out to schedule a tour. This kind of home doesn't open up often in Chapel Hill.`,
   },
   {
     id: 5,
-    title: 'Affordable 2BR Duplex',
-    address: '987 S George Street',
-    city: 'Goldsboro',
-    zipCode: '27530',
-    bedrooms: 2,
-    bathrooms: 1.0,
-    rent: 900,
+    title: 'About 46 Hill Creek Blvd',
+    address: '46 Hill Creek Blvd,Chapel Hill, NC 27516',
+    bedrooms: 3,
+    bathrooms: 2.5,
+    rent: 3400,
+    every: 'mon',
+    sqrFt: '1440',
     availableDate: '7/25/2025',
     propertyType: 'Duplex',
     image: '/images/properties/five/1.jpg',
@@ -164,18 +172,21 @@ export const properties: Property[] = [
       '/images/properties/five/16.jpg',
       '/images/properties/five/17.jpg',
     ],
-    description:
-      'Clean and well-maintained duplex with spacious bedrooms, eat-in kitchen, and private entrance. Includes appliances, central heat/air, and small backyard. Great for first-time renters or those on a budget.',
+    description: `Stunning and beautifully appointed single family home for rent in the wildly popular Briar Chapel neighborhood in Chapel Hill! This rental comes furnished and is available for a 1 year lease. Covered patio and fenced in yard. Briar Chapel offers some of the best community amenities including swimming pools, tennis/pickle ball courts, trails, and playgrounds.
+
+Utilities included in rent: water, gas, electricity, internet
+Owner pays water, electricty, gas, and internet. Security deposit, first and last due at signing. Rental comes furnished. Lease term options are 6-12 months.
+
+*Furnishings vary from the furnishings in the photos, but very similar.`,
   },
   {
     id: 6,
-    title: 'Updated 3BR Ranch Style',
-    address: '1432 Piedmont Avenue',
-    city: 'Goldsboro',
-    zipCode: '27534',
+    title: '810-812 N. Mebane St',
+    address: '810-812 N Mebane St, Burlington, NC 27217',
     bedrooms: 3,
     bathrooms: 2.0,
-    rent: 1275,
+    rent: 1025,
+    every: 'mon',
     availableDate: '8/10/2025',
     propertyType: 'House',
     image: '/images/properties/six/1.webp',
@@ -193,19 +204,19 @@ export const properties: Property[] = [
       '/images/properties/six/12.webp',
       '/images/properties/six/13.webp',
     ],
-    description:
-      'Recently renovated ranch-style home with open floor plan, new flooring throughout, and updated bathrooms. Large living area, dining room, and private backyard with deck. Move-in ready condition.',
+    description: `Welcome to your new home in Burlington, NC! This 2-bedroom, 1-bathroom apartment is freshly painted and features all hard surface flooring, offering a clean and modern aesthetic. The kitchen is equipped with a range and fridge, and also includes a dishwasher for your convenience. The apartment comes with a carport, ensuring your vehicle is protected from the elements. Additionally, a laundry room is available, making laundry day a breeze. The location is a standout feature, as it is conveniently situated in Burlington, close to a variety of shopping destinations and eateries. This apartment offers a blend of comfort, style, and convenience. Don't miss out on this gem in Burlington! Small dog may be accepted with approved pet application, pet fee, and pet rent. Accept Section 8.`,
   },
   {
     id: 7,
-    title: 'Studio Apartment Downtown',
-    address: '125 N Center Street',
-    city: 'Goldsboro',
-    zipCode: '27534',
+    title:
+      'Fantastic for families with small children, college students, or people who have dogs (large and thoroughly enclosed fence). ',
+    address: '1111 Franklin St, Burlington, NC 27215',
     bedrooms: 4,
-    bathrooms: 4.0,
-    rent: 650,
-    availableDate: '7/30/2025',
+    bathrooms: 2,
+    rent: 2200,
+    every: 'mon',
+    sqrFt: '1538',
+    availableDate: 'Mon Sep 1 2025',
     propertyType: 'Apartment',
     image: '/images/properties/seven/1.webp',
     images: [
@@ -226,18 +237,62 @@ export const properties: Property[] = [
       '/images/properties/seven/16.webp',
       '/images/properties/seven/17.webp',
     ],
-    description:
-      'Efficient studio apartment in the heart of downtown Goldsboro. Features high ceilings, modern fixtures, and kitchenette. Walking distance to restaurants, shops, and entertainment venues. Perfect for professionals or students.',
+    description: `Charming Home for Rent
+
+Fantastic for families with small children, college students, or people who have dogs (large and thoroughly enclosed fence). 
+
+ Walkable to the Burlington Arboretum!
+
+Welcome to this beautifully maintained home located on a quiet, tree-lined street in the heart of Burlington. Just steps away from the Burlington Arboretum at Willowbrook Park, this property offers the perfect blend of comfort, convenience, and natural beauty.
+
+ 4 Bedrooms (two upstairs, two downstairs)
+ 2 Bathrooms (one upstairs, one downstairs)
+ Large Fully Fenced Yard
+ Driveway (in the front of house and behind the fence gate) + Ample Street Parking
+
+Home features:
+Bright and open living areas with hardwood floors
+Updated kitchen with modern appliances and generous storage
+Washer and dryer included
+Central heat and air (each with a separate system upstairs and downstairs)
+Spacious backyard ideal for relaxing or entertaining
+
+Location perks:
+1-minute walk to the Burlington Arboretum and Willowbrook Park
+Minutes to downtown Burlington's shops, restaurants, and coffee spots
+Close to Elon University and Alamance Regional Medical Center
+Easy access to I-40/I-85 for commuting to Greensboro, Chapel Hill, or Durham (I commuted from this house to Raleigh for law school for a year and it is totally doable!)
+
+A note regarding pets: As the owners of dogs and cats, we know how difficult it is to find a rental. 
+
+ Pet Policy
+
+We love pets and welcome responsible pet owners!
+
+Dogs and cats allowed (up to 2 pets per household)
+No breed or size restrictions
+Well-behaved pets of all ages welcome
+Pet fee: $200 one-time non-refundable fee per pet
+No monthly pet rent
+No exotic animals or livestock (e.g., snakes, ferrets, goats, etc.)
+
+Expectations for Pet Owners:
+Pets must be house-trained
+Pet waste must be promptly cleaned up (especially in shared or outdoor spaces)
+Pets should not create excessive noise or disturbances
+Any pet-related damage (e.g., scratched doors, chewed trim, stained carpets) outside of normal wear and tear must be repaired at tenant's expense`,
   },
   {
     id: 8,
-    title: 'Family Home with Large Yard',
-    address: '2756 Salem Church Road',
-    city: 'Goldsboro',
-    zipCode: '27530',
-    bedrooms: 4,
-    bathrooms: 2.5,
-    rent: 1650,
+    title:
+      'Beautifully fully remodeled 2 bedroom apartment in Burlington. High ceilings and a double size main bedroom make this apartment feel even larger than it is',
+    address: '1219 Grace Ave #1, Burlington, NC 27217',
+    bedrooms: 2,
+    bathrooms: 1,
+    rent: 1150,
+    every: 'mon',
+    sqrFt: '900',
+
     availableDate: '8/5/2025',
     propertyType: 'House',
     image: '/images/properties/eight/1.webp',
@@ -252,18 +307,30 @@ export const properties: Property[] = [
       '/images/properties/eight/8.webp',
       '/images/properties/eight/9.webp',
     ],
-    description:
-      'Spacious family home with 4 bedrooms, formal dining room, and large living area. Huge fenced backyard perfect for children and pets. Updated kitchen with breakfast bar, master suite with private bath, and attached carport.',
+    description: `Beautifully fully remodeled 2 bedroom apartment in Burlington. High ceilings and a double size main bedroom make this apartment feel even larger than it is. Updates include fresh paint throughout, hardwood floors, bathroom, modern kitchen cabinets with granite counters, and updated LED lighting throughout entire home. 
+Must see to appreciate. Rent incudes Water, Sewer, Trash and Yard Care.
+This is a smoke-free property. NO smoking is allowed inside or on the porches.
+No Pets Allowed.
+MINIMUM CREDIT SCORE 600 Must have income of $3,450 per month.
+Tenant pays gas, electric & internet. 
+This is a Downstairs 2 Bedroom Unit
+
+This is a smoke-free property. NO smoking is allowed inside or on the porches.
+No Pets Allowed.
+MINIMUM CREDIT SCORE 600 Must have income of $3,450 per month.
+Tenant pays gas, electric & internet. 
+Rent incudes Water, Sewer, Trash and Yard Care.
+This is a Downstairs 2 Bedroom Unit`,
   },
   {
     id: 9,
-    title: 'Convenient 1BR Near Base',
-    address: '3421 US Highway 70 East',
-    city: 'Goldsboro',
-    zipCode: '27534',
-    bedrooms: 1,
-    bathrooms: 1.0,
-    rent: 750,
+    title: 'CAbout 829 Burton St',
+    address: '829 Burton St,Rocky Mount, NC 27803',
+    bedrooms: 3,
+    bathrooms: 1.5,
+    rent: 1750,
+    every: 'mon',
+    sqrFt: '1215',
     availableDate: '8/20/2025',
     propertyType: 'Apartment',
     image: '/images/properties/nine/1.png',
@@ -279,18 +346,18 @@ export const properties: Property[] = [
       '/images/properties/nine/9.png',
       '/images/properties/nine/10.png',
     ],
-    description:
-      'Military-friendly 1-bedroom apartment with easy access to Seymour Johnson Air Force Base. Includes all appliances, covered parking, and on-site laundry facilities. Flexible lease terms available for military personnel.',
+    description: `A beautifully updated 3-bedroom, 1.5-bath home in a peaceful Rocky Mount neighborhood. Open layout ideal for families or working professionals. A large yard and private deck perfect for entertaining or relaxing. The covered carport offers extra convenience and charm. Home Features: *3 bedrooms / 1.5 bathrooms *Updated kitchen and Bathrooms *Central heating & air *Washer/dryer hookups *Quiet residential street Rental Terms: *Rent: $1,750/month *Deposit: $1,750 *Admin Fee: $100 (due at lease signing) *Lease Term: 12 months *Pets: Accepted with approval and pet fee *Section 8: Accepted *No smoking Screening Requirements: *Minimum credit score: 620 *Monthly income: At least 3x the rent ($5,250/month minimum household income) *Background, credit and rental history checks required *Application fee applies (non-refundable) This home is move-in ready and won't last long--apply today and make it yours`,
   },
   {
     id: 10,
-    title: 'Townhouse with Modern Updates',
-    address: '1789 Cardinal Woods Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
-    bedrooms: 3,
-    bathrooms: 2.5,
-    rent: 1425,
+    title:
+      '1 bedroom 1 bathroom house, stainless appliances. Fenced yard. Off street parking. Smart home. Washer and dryer hookup',
+    address: '1617 Burton St,Rocky Mount, NC 27803',
+    bedrooms: 1,
+    bathrooms: 1,
+    rent: 1100,
+    every: 'mon',
+    sqrFt: '700',
     availableDate: '7/12/2025',
     propertyType: 'Townhouse',
     image: '/images/properties/ten/1.png',
@@ -308,17 +375,17 @@ export const properties: Property[] = [
       '/images/properties/ten/11.png',
     ],
     description:
-      'Modern townhouse with vaulted ceilings, fireplace, and attached garage. End unit with extra privacy, patio, and storage space. Features include hardwood floors, updated kitchen, and master bedroom with ensuite bathroom.',
+      'Allocating 30% of your income to rent hits the sweet spot between comfort and affordability. This golden rule ensures you can secure a place to truly call home, leaving enough room in your budget for essentials, setting aside some savings, and a bit of discretionary spending. With 30%, you can strike the right balance, making your living situation not just affordable but enjoyable.',
   },
   {
     id: 11,
-    title: 'Cozy 2BR Mobile Home',
-    address: '4567 Old Mount Olive Highway',
-    city: 'Goldsboro',
-    zipCode: '27534',
+    title: 'Legacy at Baldwin Ridge',
+    address: '1055 Baldwin Ridge Rd,Burlington, NC 27217',
     bedrooms: 2,
-    bathrooms: 1.0,
-    rent: 675,
+    bathrooms: 1.5,
+    rent: 1199,
+    every: 'mon',
+    sqrFt: '700-950',
     availableDate: '8/8/2025',
     propertyType: 'Mobile Home',
     image: '/images/properties/eleven/1.webp',
@@ -353,18 +420,17 @@ export const properties: Property[] = [
       '/images/properties/eleven/29.webp',
       '/images/properties/eleven/30.webp',
     ],
-    description:
-      'Well-maintained mobile home in quiet park setting. Includes appliances, central air, and covered parking. Large lot with storage shed and garden space. Pet-friendly community with playground and laundry facilities.',
+    description: `Legacy at Baldwin Ridge Apartments is your destination for new luxury apartments in Burlington, NC! With exceptional 1, 2 & 3 bedroom apartment homes, enjoy stunning kitchens with stainless steel stove, refrigerator, dishwasher and microwave, spacious closets for ample storage, washers and dryers included, and bright, open floor plans. Every detail has been designed with your enjoyment in mind! Resort-style amenities include a refreshing swimming pool and sundeck, 24-hour fitness center, and dog park where your furry friends play freely. There is also a fully equipped outdoor kitchen, firepit, picnic spot with barbecue grills, and children's playground for family fun. Call us to set up a personal tour of your new home with one of the members of our friendly leasing staff!`,
   },
   {
     id: 12,
-    title: 'Historic District Apartment',
-    address: '234 East Chestnut Street',
-    city: 'Goldsboro',
-    zipCode: '27534',
+    title: 'Legacy Lake Norman',
+    address: '121 Village Green Ln, Mooresville, NC 28117',
     bedrooms: 2,
     bathrooms: 1.5,
-    rent: 10550,
+    rent: 1455,
+    every: 'mon',
+    sqrFt: '1081',
     availableDate: '7/18/2025',
     propertyType: 'Apartment',
     image: '/images/properties/twelve/1.webp',
@@ -394,18 +460,19 @@ export const properties: Property[] = [
       '/images/properties/twelve/24.webp',
       '/images/properties/twelve/25.webp',
     ],
-    description:
-      'Charming apartment in historic downtown building with original architectural features. High ceilings, large windows, and hardwood floors. Walking distance to parks, museums, and local businesses. Off-street parking included.',
+    description: `Price shown is Base Rent. Residents are required to pay: At Application: Admin Fee ($150.00/unit); Application Fee ($50.00/applicant, nonrefundable); At Move-in: Security Deposit (Refundable) ($400.00/unit); Access Device ($15.00/device); Monthly: Pest Control ($5.00/unit); Trash-Hauling ($17.00/unit); Water/Sewer (usage-based); Trash-Doorstep ($10.00/unit); Utility-Billing Admin Fee ($3.75/unit); Renters Liability Insurance-3rd Party (varies). Please visit the property website for a full list of all optional and situational fees. Floor plans are artist's rendering. All dimensions are approximate. Actual product and specifications may vary in dimension or detail. Not all features are available in every rental home. Please see a representative for details.
+
+Welcome to Legacy Lake Norman! From the moment you walk through the door, you'll feel the comfort and attention to detail that makes our residents happy to call us home. Cutting-edge amenities, meticulously-groomed grounds, and a dedicated award-winning staff all contribute to a higher standard of living. Convenient shopping, excellent schools, easy access to Lake Norman, and major interstates are just some of the reasons you will want to make Legacy Lake Norman your new home. Our one, two, and three-bedroom homes will surprise and delight with large windows, walk-in closets, modern kitchens, and upgraded appliances. Stay connected with our advantageous location near I-77 to get you wherever you need to go quickly. Our proximity to Lake Norman opens up a wealth of thrilling recreational activities! We are also right next door to the Lowe's Corporate Center and just across the street from the Lake Norman Medical Center. Call us today to schedule a tour of your new home.`,
   },
   {
     id: 13,
-    title: 'New Construction 3BR Home',
-    address: '892 Springbrook Lane',
-    city: 'Goldsboro',
-    zipCode: '27534',
-    bedrooms: 3,
+    title: 'Stonewood Apartments',
+    address: '445 Stonewood Dr, Mooresville, NC 28115',
+    bedrooms: 2,
     bathrooms: 2.0,
-    rent: 1550,
+    rent: 1275,
+    every: 'mon',
+    sqrFt: '800',
     availableDate: '8/25/2025',
     propertyType: 'House',
     image: '/images/properties/thirteen/1.webp',
@@ -422,17 +489,18 @@ export const properties: Property[] = [
       '/images/properties/thirteen/10.webp',
     ],
     description:
-      'Brand new construction home with energy-efficient features and modern amenities. Open concept living, granite countertops, stainless appliances, and luxury vinyl plank flooring. Two-car garage and covered front porch.',
+      'Offering well thought out and functional one- and two-bedroom apartment homes, look no further than Stonewood Apartments. A peaceful neighborly community, convenient to downtown Mooresville and minutes from Lake Norman. We are committed to excellence, affordability, convenience and service. Our community has everything you are looking for in an apartment home and resident satisfaction is our top priority!',
   },
   {
     id: 14,
-    title: 'Affordable 1BR Efficiency',
-    address: '567 S Herman Street',
-    city: 'Goldsboro',
-    zipCode: '27530',
-    bedrooms: 1,
-    bathrooms: 1.0,
-    rent: 550,
+    title:
+      'Former Model END UNIT Townhome. HUGE closets. Both bedrooms are very large.',
+    address: '135 Talbert Town Loop, Mooresville, NC 28117',
+    bedrooms: 2,
+    bathrooms: 2.0,
+    rent: 1850,
+    sqrFt: '1400',
+    every: 'mon',
     availableDate: '7/28/2025',
     propertyType: 'Apartment',
     image: '/images/properties/fourteen/1.webp',
@@ -451,18 +519,19 @@ export const properties: Property[] = [
       '/images/properties/fourteen/13.webp',
       '/images/properties/fourteen/14.webp',
     ],
-    description:
-      'Budget-friendly efficiency apartment perfect for students or those needing temporary housing. Basic amenities included, shared laundry facilities, and convenient location near public transportation and shopping.',
+    description: `Former Model END UNIT Townhome. HUGE closets. Both bedrooms are very large. 2 full size bathrooms. Wood laminate flooring on entire main level. Comes with washer/dryer/fridge. Fenced in yard (privacy) in back. Outside storage closet. Freshly painted. Steamed carpets, newer lighting & Granite counters. Community has swimming pool. Located very close to wal-mart,costco, and restaurants. Wi-fi & Ring doorbell, included. Owner is licensed NC Broker.
+
+1 Year, $1850 deposit. Non-refundable Pet Fee $300. No pets over 35 lbs. No smokers. 1 Parking spot included. 1 extra space not defined. Must take care of back patio (weeding, tree trim). Must have great rental history.`,
   },
   {
     id: 15,
-    title: 'Spacious 4BR Colonial',
-    address: '1234 Country Lane Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
-    bedrooms: 4,
-    bathrooms: 3.0,
-    rent: 1875,
+    title: 'Westwood Village',
+    address: '2209 Village Dr W,Wilson, NC 27893',
+    bedrooms: 2,
+    bathrooms: 2.5,
+    rent: 925,
+    every: 'mon',
+    sqrFt: '870-1,230',
     availableDate: '8/12/2025',
     propertyType: 'House',
     image: '/images/properties/fifteen/1.webp',
@@ -488,17 +557,17 @@ export const properties: Property[] = [
       '/images/properties/fifteen/20.webp',
     ],
     description:
-      'Elegant colonial home with formal living and dining rooms, family room with fireplace, and eat-in kitchen. Master suite with walk-in closet, finished basement, and 2-car attached garage. Beautifully landscaped corner lot.',
+      'Great location! This peaceful community has wonderfully spacious one, two and three bedroom floor plans and is in walking distance to Westwood Shopping Center where you will find shopping, dining, and fitness centers. There is a lovely local park with walking track just a few blocks down the road. Wilson Medical Center and BB&T Operation Center are both a short drive away as well as Wilson Industrial Park and Hwy-264 bypass. Rents and availability subject to change. To qualify for this property you must have a credit of 635 or higher and a monthly income three times the amount of rent. Our qualification process also includes rental reference from previous rental where applicable and criminal background check. Professionally managed by J.W. Hunter Company, Inc.',
   },
   {
     id: 16,
-    title: 'Renovated 2BR Bungalow',
-    address: '876 Pine Street',
-    city: 'Goldsboro',
-    zipCode: '27530',
-    bedrooms: 2,
-    bathrooms: 1.0,
-    rent: 975,
+    title: 'Experience elevated living at Cameron Apartments in Wilson, NC.',
+    address: '1706 Vineyard Dr N,Wilson, NC 27893',
+    bedrooms: 3,
+    bathrooms: 2.5,
+    rent: 884,
+    every: 'mon',
+    sqrFt: '700-1,550',
     availableDate: '7/22/2025',
     propertyType: 'House',
     image: '/images/properties/sixteen/1.webp',
@@ -528,18 +597,17 @@ export const properties: Property[] = [
       '/images/properties/sixteen/24.webp',
       '/images/properties/sixteen/25.webp',
     ],
-    description:
-      'Completely renovated bungalow with original character and modern conveniences. New kitchen and bathroom, refinished hardwood floors, and updated electrical/plumbing. Front porch and private backyard with mature trees.',
+    description: `Experience elevated living at Cameron Apartments in Wilson, NC. Our community seamlessly combines effortless suburban living with modern amenities, offering spacious, one, two, and three-bedroom garden-style homes. Discover the perfect balance of convenience and serenity at Cameron Apartments. Centrally located in Wilson, residents enjoy easy access to downtown, major employers, schools, and vibrant shopping destinations. Whether relaxing at home or exploring the city, Cameron provides an ideal living experience for every resident.`,
   },
   {
     id: 17,
-    title: 'Luxury 2BR Loft Downtown',
-    address: '456 West Walnut Street',
-    city: 'Goldsboro',
-    zipCode: '27534',
-    bedrooms: 2,
-    bathrooms: 2.0,
-    rent: 1650,
+    title: 'About 121 Coffee Bluff Ln',
+    address: '121 Coffee Bluff Ln,Holly Springs, NC 27540',
+    bedrooms: 3,
+    bathrooms: 2.5,
+    rent: 2550,
+    every: 'mon',
+    sqrFt: '-',
     availableDate: '8/18/2025',
     propertyType: 'Loft',
     image: '/images/properties/seventeen/1.jpg',
@@ -568,18 +636,17 @@ export const properties: Property[] = [
       '/images/properties/seventeen/23.jpg',
       '/images/properties/seventeen/24.jpg',
     ],
-    description:
-      'Stunning urban loft with exposed brick walls, high ceilings, and industrial fixtures. Modern kitchen with island, spa-like bathrooms, and floor-to-ceiling windows. Includes parking space and building amenities.',
+    description: `Charming End Unit townhome nestled in a desirable neighborhood, 12 Oaks. This spacious property features modern finishes, an open-concept layout, and plenty of natural light throughout. Hardwood floors throughout the home. Enjoy a stylish kitchen with updated appliances, comfortable living areas, and a private backyard perfect for relaxing or entertaining. Conveniently located near shopping & dining. This home offers the perfect blend of comfort and convenience. Don't miss your chance to make it yours! Pets on a case by case basis. Tenant is to take over $118 per month social membership payment includes: 3 pools, tennis & pickleball, fitness center & access to the bar/restaurant. Tenant is to maintain fenced area.`,
   },
   {
     id: 18,
-    title: 'Pet-Friendly 3BR Ranch',
-    address: '2145 Berkeley Boulevard',
-    city: 'Goldsboro',
-    zipCode: '27534',
+    title: 'About 104 Pascalis Pl',
+    address: '104 Pascalis Pl,Holly Springs, NC 27540',
     bedrooms: 3,
-    bathrooms: 2.0,
-    rent: 1325,
+    bathrooms: 2.5,
+    rent: 2795,
+    every: 'mon',
+    sqrFt: '2,218',
     availableDate: '7/16/2025',
     propertyType: 'House',
     image: '/images/properties/eighteen/1.jpg',
@@ -608,18 +675,17 @@ export const properties: Property[] = [
       '/images/properties/eighteen/23.jpg',
       '/images/properties/eighteen/24.jpg',
     ],
-    description:
-      'Pet-friendly ranch home with fenced backyard and doggy door. Open living area, eat-in kitchen, and split bedroom plan. Laminate flooring throughout, ceiling fans, and storage building. Great for families with pets.',
+    description: `Available this August~A MUST SEE! Gorgeous & popular 12 Oaks. Just a stroll over to enjoy the neighborhood amenities, which are INCLUDED with rent -which also includes golf package! Amenities: 3 pools, clubhouse, playground, fitness center, pickleball and tennis courts, greenways, and a community garden! End-unit w/ covered front porch opens to hardwood floors; gas fireplace in Living room; lovely Dining area; stainless steel appliances in eat-in kitchen; 1st floor main retreat has 2 walk-in closets; Loft & study area on 2nd floor + 2 spacious bedrooms; rear entry 2-car garage. Photos prior to current Tenant. Sorry, firm no pet policy.`,
   },
   {
     id: 19,
-    title: 'Senior Living 1BR',
-    address: '789 Retirement Village Way',
-    city: 'Goldsboro',
-    zipCode: '27534',
-    bedrooms: 1,
-    bathrooms: 1.0,
-    rent: 950,
+    title: 'About 723 Dorset Stream Dr',
+    address: '723 Dorset Stream Dr,Fuquay Varina, NC 27526',
+    bedrooms: 3,
+    bathrooms: 2,
+    rent: 1900,
+    every: 'mon',
+    sqrFt: '1599',
     availableDate: '8/6/2025',
     propertyType: 'Apartment',
     image: '/images/properties/nineteen/1.jpg',
@@ -646,18 +712,18 @@ export const properties: Property[] = [
       '/images/properties/nineteen/21.jpg',
       '/images/properties/nineteen/22.jpg',
     ],
-    description:
-      'Age-restricted community apartment with handicap accessibility features. Emergency call system, community activities, transportation services, and maintenance included. Quiet setting with walking trails and garden areas.',
+    description: `Welcome to your dream home at 723 Dorset Stream Dr, nestled in the charming community of Fuquay Varina! This delightful 3-bedroom, 2-bathroom house offers a perfect blend of comfort and modern conveniences, making it an ideal retreat for anyone looking to settle down in a vibrant neighborhood. Step inside to discover a spacious 1,599 square feet of living space, designed for both relaxation and entertaining. The heart of the home features a fully-equipped kitchen with top-of-the-line appliances, including a double oven, electric stove top, and dishwasher, ensuring that meal prep is a breeze. Enjoy cozy evenings in the inviting living area or take advantage of the ample outdoor space for gatherings with friends. This pet-friendly home welcomes both cats and dogs, so your furry companions can join in on the fun! Additional amenities include: - Washer and dryer for your laundry needs - Refrigerator and microwave for convenience - Garbage disposal and exhaust hood for easy kitchen clean-up Don't miss out on this fantastic opportunity to make this house your home! Schedule a showing starting June 26, 2025, and get ready to fall in love with all that this property has to offer. Preferred lease duration is 1 year. This property is unfurnished. Security Deposit amount determined by the owner.`,
   },
   {
     id: 20,
-    title: 'Student Housing 4BR',
-    address: '1567 University Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
-    bedrooms: 4,
-    bathrooms: 2.0,
-    rent: 1400,
+    title:
+      'Beautiful, 3-bedroom home in the popular Bonterra Village Neighborhood! The open floor plan allows for seamless transitions from space-to-space',
+    address: '7032 Ladys Secret Dr, Indian Trail, NC 28079',
+    bedrooms: 3,
+    bathrooms: 2,
+    rent: 2100,
+    every: 'mon',
+    sqrFt: '1,664',
     availableDate: '7/31/2025',
     propertyType: 'House',
     image: '/images/properties/twenty/1.webp',
@@ -683,15 +749,19 @@ export const properties: Property[] = [
       '/images/properties/twenty/20.webp',
       '/images/properties/twenty/21.webp',
     ],
-    description:
-      'Perfect for college students or young professionals sharing expenses. Four bedrooms, common areas, high-speed internet ready, and close to Wayne Community College. Individual leases available with roommate matching services.',
+    description: `Beautiful, 3-bedroom home in the popular Bonterra Village Neighborhood! The open floor plan allows for seamless transitions from space-to-space. The spacious living room has a vaulted ceiling and fan. The incredible kitchen features granite countertops, wood cabinets, large island, gas cooktop, and pantry. Primary suite has a tray ceiling, walk-in closet, ceiling fan and en-suite bathroom with dual vanities, walk-in shower and soaking tub. Plus two additional bedrooms that share a full bath. In-unit washer and dryer! Lawn maintenance covered by HOA! Fantastic community amenities, including outdoor pool, clubhouse, fitness center, playground and tennis courts! 
+*Please note that furnishings pictured will not come with the home. Fireplace is for decoration only, do not use!* 
+
+-Carpet will be cleaned before move in as well-
+
+This property must be shown by a Realtor. You may use any NC State Licensed Realtor you choose, or call our office for a referral.
+
+Please be advised that this property is managed by T.R. Lawing Realty. We will NEVER ask you to wire money or take the key after your showing to move-in.`,
   },
   {
     id: 21,
     title: 'Waterfront 2BR Condo',
     address: '345 Lake View Terrace',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 2,
     bathrooms: 2.0,
     rent: 1475,
@@ -737,8 +807,6 @@ export const properties: Property[] = [
     id: 22,
     title: 'Compact 1BR Near Hospital',
     address: '678 Medical Center Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 1,
     bathrooms: 1.0,
     rent: 825,
@@ -775,8 +843,6 @@ export const properties: Property[] = [
     id: 23,
     title: 'Luxury 5BR Executive Estate',
     address: '1001 Mansion Hill Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 5,
     bathrooms: 4.5,
     rent: 2750,
@@ -808,8 +874,6 @@ export const properties: Property[] = [
     id: 24,
     title: 'Affordable 3BR Duplex',
     address: '432 Elm Street',
-    city: 'Goldsboro',
-    zipCode: '27530',
     bedrooms: 3,
     bathrooms: 1.5,
     rent: 1075,
@@ -837,8 +901,6 @@ export const properties: Property[] = [
     id: 25,
     title: 'Modern 2BR Near Shopping',
     address: '876 Retail Plaza Boulevard',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 2,
     bathrooms: 2.0,
     rent: 1225,
@@ -871,8 +933,6 @@ export const properties: Property[] = [
     id: 26,
     title: 'Country Style 3BR Home',
     address: '5643 Rural Route 15',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 3,
     bathrooms: 2.0,
     rent: 1175,
@@ -911,8 +971,6 @@ export const properties: Property[] = [
     id: 27,
     title: 'Updated 1BR Garden Apartment',
     address: '234 Garden Court',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 1,
     bathrooms: 1.0,
     rent: 775,
@@ -979,8 +1037,6 @@ export const properties: Property[] = [
     id: 28,
     title: 'Spacious 4BR Split Level',
     address: '987 Hillcrest Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 4,
     bathrooms: 2.5,
     rent: 1625,
@@ -1029,8 +1085,6 @@ export const properties: Property[] = [
     id: 29,
     title: 'Cozy 2BR Cottage',
     address: '543 Magnolia Street',
-    city: 'Goldsboro',
-    zipCode: '27530',
     bedrooms: 2,
     bathrooms: 1.0,
     rent: 925,
@@ -1070,8 +1124,6 @@ export const properties: Property[] = [
     id: 30,
     title: 'Executive 3BR Townhome',
     address: '321 Executive Square',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 3,
     bathrooms: 2.5,
     rent: 1525,
@@ -1104,8 +1156,6 @@ export const properties: Property[] = [
     id: 31,
     title: 'Updated 1BR Garden Apartment',
     address: '234 Garden Court',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 1,
     bathrooms: 1.0,
     rent: 775,
@@ -1133,8 +1183,6 @@ export const properties: Property[] = [
     id: 32,
     title: 'Spacious 4BR Split Level',
     address: '987 Hillcrest Drive',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 4,
     bathrooms: 2.5,
     rent: 1625,
@@ -1174,8 +1222,6 @@ export const properties: Property[] = [
     id: 33,
     title: 'Cozy 2BR Cottage',
     address: '543 Magnolia Street',
-    city: 'Goldsboro',
-    zipCode: '27530',
     bedrooms: 2,
     bathrooms: 1.0,
     rent: 925,
@@ -1215,8 +1261,6 @@ export const properties: Property[] = [
     id: 34,
     title: 'Executive 3BR Townhome',
     address: '321 Executive Square',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 3,
     bathrooms: 2.5,
     rent: 1525,
@@ -1249,8 +1293,6 @@ export const properties: Property[] = [
     id: 35,
     title: 'Executive 3BR Townhome',
     address: '321 Executive Square',
-    city: 'Goldsboro',
-    zipCode: '27534',
     bedrooms: 3,
     bathrooms: 2.5,
     rent: 1525,
