@@ -11,6 +11,9 @@ import { PropertyDetail } from '../available-rentals/property-detail/property-de
 import { properties, Property } from '../../../data/properties';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
+import emailjs from '@emailjs/browser';
+import { HttpStatusCode } from '@angular/common/http';
 
 @Component({
   selector: 'app-rental-inquiry',
@@ -28,6 +31,8 @@ export class RentalInquiryComponent implements OnInit {
   properties = signal<Property[]>(properties);
   activatedRoute = inject(ActivatedRoute);
   router = inject(Router);
+  isSending = signal<boolean>(false);
+  toastr = inject(ToastrService);
 
   timeSlots = [
     '9:00 AM',
@@ -85,11 +90,10 @@ export class RentalInquiryComponent implements OnInit {
     const property = this.properties().find((p) => p.id == propertyId);
     if (property) {
       this.selectedProperty.set(property);
-    }else{
-      alert('Property not found. Please select a valid property.');
+    } else {
+      this.toastr.error('Property not found. Please select a valid property.');
       this.router.navigate(['/available-rentals']);
     }
-    
   }
 
   switchTab(tabName: string): void {
@@ -113,37 +117,78 @@ export class RentalInquiryComponent implements OnInit {
     this.scheduleForm.patchValue({ selectedTime: timeSlot });
   }
 
-  onSubmit(): void {
-    if (this.scheduleForm.invalid || !this.selectedTimeSlot()) {
-        this.markFormGroupTouched(this.scheduleForm);
-        if (!this.selectedTimeSlot()) {
-          alert('Please select a time slot for your viewing.');
-        }
-        return;
+  async onSubmit(): Promise<void> {
+    if (!this.selectedTimeSlot()) {
+      this.markFormGroupTouched(this.scheduleForm);
+      this.toastr.error('Please select a time slot for your viewing.');
+      return;
     }
 
-      const payload = {
-        ...this.contactForm.value,
-        ...this.scheduleForm.value,
-      };
-
-      console.log('Form submitted:', payload);
-      // emailjs.send('service_id', 'template_id', payload)
-      //   .then((response) => {  
-      //     console.log('Email sent successfully:', response);
-      //   }, (error) => {
-      //     console.error('Error sending email:', error);
-      //   });  
-      alert(
-        'Thank you! Your viewing appointment request has been submitted. We will contact you within 24 hours to confirm your appointment.'
-      );
-
-      // Reset forms
-      this.contactForm.reset();
-      this.scheduleForm.reset();
-      this.selectedTimeSlot.set('');
+    if (this.contactForm.invalid) {
       this.activeTab.set('contact');
-    
+      this.markFormGroupTouched(this.contactForm);
+      this.toastr.error(
+        'Please fill out all required fields in the contact form.'
+      );
+      return;
+    }
+    if (this.scheduleForm.invalid) {
+      this.activeTab.set('schedule');
+      this.markFormGroupTouched(this.scheduleForm);
+      this.toastr.error(
+        'Please fill out all required fields in the schedule form.'
+      );
+      return;
+    }
+
+    const payload = {
+      ...this.contactForm.value,
+      ...this.scheduleForm.value,
+    };
+
+    console.log('Form submitted:', payload);
+    try {
+      this.isSending.set(true);
+      const response = await emailjs.send(
+        'service_b1ay5nb',
+        'template_h3ep0k4',
+        payload,
+        'CMVI5elZQNxHW2BEF'
+      );
+      if (response.status != HttpStatusCode.Ok) {
+        this.isSending.set(false);
+        this.toastr.error(
+          'Something unexpected happened while sending the message.Please try again.',
+          'Error'
+        );
+        return;
+        ``;
+      }
+      if (response.status == HttpStatusCode.Ok) {
+        this.isSending.set(false);
+        this.toastr.success(
+          'Thank you! Your viewing appointment request has been submitted. We will contact you within 24 hours to confirm your appointment.',
+          'Success'
+        );
+        this.resetForm();
+        return;
+      }
+    } catch (error: any) {
+      if (error?.status != HttpStatusCode.Ok) {
+        this.isSending.set(false);
+        this.toastr.error('Message not sent. Try again.', 'Error');
+        this.resetForm();
+
+        return;
+      }
+    }
+  }
+
+  resetForm(): void {
+    this.contactForm.reset();
+    this.scheduleForm.reset();
+    this.selectedTimeSlot.set('');
+    this.activeTab.set('contact');
   }
 
   private markFormGroupTouched(formGroup: FormGroup): void {
