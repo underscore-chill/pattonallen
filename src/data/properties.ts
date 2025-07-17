@@ -1,3 +1,5 @@
+import { lexigrayEmail } from './contact-detail';
+
 export interface Property {
   id: number;
   title: string;
@@ -41,7 +43,7 @@ export const properties: Property[] = [
       '/images/properties/one/11.jpg',
     ],
     description:
-      'Southern Village Condo overlooking the main square on Market Street. 2 Bedrooms/2 Bathrooms. All electric heat and air conditioning. Carpeted, granite countertops. Comes with stove, refrigerator, microwave, dishwasher, stack washer/dryer. Lots of natural light. Patio that overlooks village green. Lots of closet space. Secured entrance. Walk to movie theatre, restaurants, bank, and shopping. Bus line. Contact Carolina Realty of Chapel Hill. Application fee: $50',
+      'Southern Village Condo overlooking the main square on Market Street. 2 Bedrooms/2 Bathrooms. All electric heat and air conditioning. Carpeted, granite countertops. Comes with stove, refrigerator, microwave, dishwasher, stack washer/dryer. Lots of natural light. Patio that overlooks village green. Lots of closet space. Secured entrance. Walk to movie theatre, restaurants, bank, and shopping. Contact Lexi Gray. Application fee: $50',
   },
   {
     id: 2,
@@ -931,7 +933,7 @@ Beware of Scammers! Consider the following points*:
       '/images/properties/twenty-four/11.jpg',
       '/images/properties/twenty-four/12.jpg',
     ],
-    description: `Amazing spacious bedroom, private bathroom and kitchenette in a gorgeous house in beautiful peaceful and convenient Apex/Cary/Holly Springs area. Amenities included: central air/heat, deck, hardwood floors, washer/dryer, and spacious yard, beautiful 4 acre wooded surrounding area. Utilities included: internet/Wi-Fi, electricity, and water. The house is shared with three flat mates. No smoking, drinking, recreational drugs, or parties and no regular overnight guests. No pets. Credit and criminal record will be checked. The property is managed by a responsible landlord using Avail landlord software. Available Now. $850 /month rent. $300 refundable security deposit required. If interested, contact via email at janethpearl50@gmail.com and give your contact phone or email to learn more. Always goes fast so don't risk missing a super place. Nothing else like it out there.`,
+    description: `Amazing spacious bedroom, private bathroom and kitchenette in a gorgeous house in beautiful peaceful and convenient Apex/Cary/Holly Springs area. Amenities included: central air/heat, deck, hardwood floors, washer/dryer, and spacious yard, beautiful 4 acre wooded surrounding area. Utilities included: internet/Wi-Fi, electricity, and water. The house is shared with three flat mates. No smoking, drinking, recreational drugs, or parties and no regular overnight guests. No pets. Credit and criminal record will be checked. The property is managed by a responsible landlord using Avail landlord software. Available Now. $850 /month rent. $300 refundable security deposit required. If interested, contact via email at ${lexigrayEmail} and give your contact phone or email to learn more. Always goes fast so don't risk missing a super place. Nothing else like it out there.`,
   },
   {
     id: 25,
@@ -1264,7 +1266,7 @@ Beware of Scammers! Consider the following points*:
       '/images/properties/thirty-two/24.jpg',
       '/images/properties/thirty-two/25.jpg',
     ],
-    description: `Welcome to this adorable 2-bedroom, 1-bathroom home in the heart of Kernersville, NC, offering convenience, comfort, and a welcoming layout. The spacious living area flows into a well-equipped kitchen with essential appliances, making everyday living easy and efficient.Enjoy the convenience of an in-unit washer and dryer, along with high-speed WiFi for work or streaming. The primary bedroom offers generous space, while the second bedroom is ideal for guests, a home office, or additional storage.Utilities are included, providing a hassle-free living experience in a location close to shopping, dining, and local amenities.Contact for availability and application details.`,
+    description: `Welcome to this adorable 2-bedroom, 1-bathroom home in the heart of Kernersville, NC, offering convenience, comfort, and a welcoming layout. The spacious living area flows into a well-equipped kitchen with essential appliances, making everyday living easy and efficient.Enjoy the convenience of an in-unit washer and dryer, along with high-speed WiFi for work or streaming. The primary bedroom offers generous space, while the second bedroom is ideal for guests, a home office, or additional storage.Utilities are included, providing a hassle-free living experience in a location close to shopping, dining, and local amenities. Contact for availability and application details.`,
   },
   {
     id: 33,
@@ -1405,6 +1407,6 @@ Beware of Scammers! Consider the following points*:
       '/images/properties/thirty-five/51.webp',
     ],
     description:
-      'Move-in by July 1st to receive one month free!Look & Lease Special: Apply within 48 hours of your initial tour and receive off the admin fee.Restrictions apply. Contact the office for details.',
+      'Move-in by July 1st to receive one month free !Look & Lease Special: Apply within 48 hours of your initial tour and receive off the admin fee. Restrictions apply. Contact the office for details.',
   },
 ];
