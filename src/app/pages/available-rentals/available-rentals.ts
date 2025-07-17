@@ -1,6 +1,6 @@
 import { Component, DOCUMENT, inject, signal } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { PropertyDetail } from './property-detail/property-detail';
 import { properties, Property } from '../../../data/properties';
@@ -10,10 +10,11 @@ import { properties, Property } from '../../../data/properties';
   standalone: true,
   imports: [RouterModule, FormsModule, PropertyDetail, CurrencyPipe],
   templateUrl: './available-rentals.html',
-  styleUrls: ['./available-rentals.css'],
+  styleUrl: './available-rentals.css',
 })
 export class AvailableRentals {
   document = inject(DOCUMENT);
+  router = inject(Router);
   viewMode: 'list' | 'map' = 'list';
   searchTerm = '';
   selectedCity = '';
@@ -53,7 +54,7 @@ export class AvailableRentals {
   filteredProperties = signal<Property[]>([]);
 
   expandedDescriptions: Set<number> = new Set();
-  selectedProperty: Property | null = null;
+  selectedProperty = signal<Property | null>(null);
   showPropertyDetail = signal<boolean>(false);
 
   ngOnInit() {
@@ -148,14 +149,12 @@ export class AvailableRentals {
     this.applyFilters();
   }
 
-  scheduleViewing(property: Property) {
-    // Handle scheduling logic
-    console.log('Schedule viewing for:', property.title);
+  scheduleViewing(propertyId: number) {
+    this.router.navigate(['/rental-inquiry', propertyId]);
   }
 
-  submitApplication(property: Property) {
-    // Handle application logic
-    console.log('Submit application for:', property.title);
+  submitApplication() {
+    this.router.navigateByUrl('/contact');
   }
 
   toggleDescription(propertyId: number) {
@@ -171,14 +170,14 @@ export class AvailableRentals {
   }
 
   openPropertyDetail(property: Property) {
-    this.selectedProperty = property;
+    this.selectedProperty.set(property);
     this.showPropertyDetail.set(true);
     // Prevent body scroll when modal is open
     this.document.body.style.overflow = 'hidden';
   }
 
   closePropertyDetail() {
-    this.selectedProperty = null;
+    this.selectedProperty.set(null);
     this.showPropertyDetail.set(false);
     // Restore body scroll
     this.document.body.style.overflow = 'auto';

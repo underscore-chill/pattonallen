@@ -324,7 +324,7 @@ This is a Downstairs 2 Bedroom Unit`,
   },
   {
     id: 9,
-    title: 'CAbout 829 Burton St',
+    title: 'About 829 Burton St',
     address: '829 Burton St,Rocky Mount, NC 27803',
     bedrooms: 3,
     bathrooms: 1.5,

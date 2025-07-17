@@ -1,23 +1,20 @@
 <!-- Modal Overlay -->
 @if (isVisible() && property()) {
-<div
-  class="fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center p-4"
-  (click)="onClose()"
->
+<div [class]="modalOverlayClass()" (click)="onClose()">
   <!-- Modal Content -->
-  <div
-    class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-    (click)="$event.stopPropagation()"
-  >
+  <div [class]="modalContentClass()" (click)="$event.stopPropagation()">
     <!-- Header -->
     <div class="flex justify-between items-center p-6 border-b">
       <h2 class="text-2xl font-bold text-gray-800">{{ property()?.title }}</h2>
+
+      @if(showCloseIcon()) {
       <button
         (click)="onClose()"
         class="text-gray-500 hover:text-gray-700 text-2xl font-bold"
       >
         ×
       </button>
+    }
     </div>
 
     <!-- Image Carousel -->
@@ -253,18 +250,21 @@
 
       <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 pt-6 border-t">
+        @if(showScheduleButton()) {
         <button
           (click)="scheduleViewing()"
           class="bg-secondary hover:bg-secondary-dark text-white font-medium py-3 px-8 rounded transition-colors duration-200"
         >
           SCHEDULE VIEWING
         </button>
+        } @if(showApplicationButton()) {
         <button
           (click)="submitApplication()"
           class="bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded transition-colors duration-200"
         >
           SUBMIT APPLICATION
         </button>
+        }
       </div>
     </div>
   </div>

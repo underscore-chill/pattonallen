@@ -1,5 +1,6 @@
-import { Component, output, input, signal } from '@angular/core';
+import { Component, output, input, signal, inject } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface Property {
   id: number;
@@ -25,8 +26,19 @@ interface Property {
   styleUrls: ['./property-detail.css'],
 })
 export class PropertyDetail {
+  router = inject(Router);
+
   property = input<Property | null>(null);
   isVisible = input<boolean>(false);
+  showCloseIcon = input<boolean>(true);
+  showScheduleButton = input<boolean>(true);
+  showApplicationButton = input<boolean>(true);
+  modalContentClass = input<string>(
+    'bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto'
+  );
+  modalOverlayClass = input<string>(
+    'fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center p-4"'
+  );
   close = output<void>();
 
   currentImageIndex = signal<number>(0);
@@ -54,12 +66,10 @@ export class PropertyDetail {
   }
 
   scheduleViewing() {
-    console.log('Schedule viewing for:', this.property()?.title);
-    // Implement scheduling logic
+    this.router.navigate(['/rental-inquiry', this.property()?.id]);
   }
 
   submitApplication() {
-    console.log('Submit application for:', this.property()?.title);
-    // Implement application logic
+    this.router.navigateByUrl('/contact');
   }
 }

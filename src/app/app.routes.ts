@@ -43,4 +43,11 @@ export const routes: Routes = [
         (m) => m.AvailableRentals
       ),
   },
+  {
+    path: 'rental-inquiry/:propertyId',
+    loadComponent: () =>
+      import('./pages/rental-inquiry/rental-inquiry').then(
+        (m) => m.RentalInquiryComponent
+      ),
+  }
 ];
