@@ -87,7 +87,7 @@ export const properties: Property[] = [
     rent: 1750,
     every: 'mon',
     sqrFt: '961',
-    availableDate: '',
+    availableDate: 'Aug 1st 2025',
     propertyType: 'House',
     image: '/images/properties/three/1.jpg',
     images: [
@@ -114,7 +114,7 @@ export const properties: Property[] = [
     rent: 3200,
     every: 'mon',
     sqrFt: '2194',
-    availableDate: '8/15/2025',
+    availableDate: 'July 1, 2025.',
     propertyType: 'House',
     image: '/images/properties/four/1.jpg',
     images: [
@@ -153,7 +153,7 @@ Furnishing options are available for an added cost if preferred. Just ask when y
     rent: 3400,
     every: 'mon',
     sqrFt: '1440',
-    availableDate: '7/25/2025',
+    availableDate: 'Sept 25, 2025',
     propertyType: 'Duplex',
     image: '/images/properties/five/1.jpg',
     images: [
@@ -333,7 +333,7 @@ This is a Downstairs 2 Bedroom Unit`,
     rent: 1750,
     every: 'mon',
     sqrFt: '1215',
-    availableDate: '8/20/2025',
+    availableDate: 'Now',
     propertyType: 'Apartment',
     image: '/images/properties/nine/1.png',
     images: [
@@ -360,7 +360,7 @@ This is a Downstairs 2 Bedroom Unit`,
     rent: 1100,
     every: 'mon',
     sqrFt: '700',
-    availableDate: '7/12/2025',
+    availableDate: '8/12/2025',
     propertyType: 'Townhouse',
     image: '/images/properties/ten/1.png',
     images: [
@@ -433,7 +433,7 @@ This is a Downstairs 2 Bedroom Unit`,
     rent: 1455,
     every: 'mon',
     sqrFt: '1081',
-    availableDate: '7/18/2025',
+    availableDate: '8/18/2025',
     propertyType: 'Apartment',
     image: '/images/properties/twelve/1.webp',
     images: [
@@ -503,7 +503,7 @@ Welcome to Legacy Lake Norman! From the moment you walk through the door, you'll
     rent: 1850,
     sqrFt: '1400',
     every: 'mon',
-    availableDate: '7/28/2025',
+    availableDate: '9/28/2025',
     propertyType: 'Apartment',
     image: '/images/properties/fourteen/1.webp',
     images: [
@@ -570,7 +570,7 @@ Welcome to Legacy Lake Norman! From the moment you walk through the door, you'll
     rent: 884,
     every: 'mon',
     sqrFt: '700-1,550',
-    availableDate: '7/22/2025',
+    availableDate: '10/22/2025',
     propertyType: 'House',
     image: '/images/properties/sixteen/1.webp',
     images: [
@@ -649,7 +649,7 @@ Welcome to Legacy Lake Norman! From the moment you walk through the door, you'll
     rent: 2795,
     every: 'mon',
     sqrFt: '2,218',
-    availableDate: '7/16/2025',
+    availableDate: 'This August',
     propertyType: 'House',
     image: '/images/properties/eighteen/1.jpg',
     images: [
@@ -688,7 +688,7 @@ Welcome to Legacy Lake Norman! From the moment you walk through the door, you'll
     rent: 1900,
     every: 'mon',
     sqrFt: '1599',
-    availableDate: '8/6/2025',
+    availableDate: 'July 26 2025',
     propertyType: 'Apartment',
     image: '/images/properties/nineteen/1.jpg',
     images: [
@@ -714,7 +714,7 @@ Welcome to Legacy Lake Norman! From the moment you walk through the door, you'll
       '/images/properties/nineteen/21.jpg',
       '/images/properties/nineteen/22.jpg',
     ],
-    description: `Welcome to your dream home at 723 Dorset Stream Dr, nestled in the charming community of Fuquay Varina! This delightful 3-bedroom, 2-bathroom house offers a perfect blend of comfort and modern conveniences, making it an ideal retreat for anyone looking to settle down in a vibrant neighborhood. Step inside to discover a spacious 1,599 square feet of living space, designed for both relaxation and entertaining. The heart of the home features a fully-equipped kitchen with top-of-the-line appliances, including a double oven, electric stove top, and dishwasher, ensuring that meal prep is a breeze. Enjoy cozy evenings in the inviting living area or take advantage of the ample outdoor space for gatherings with friends. This pet-friendly home welcomes both cats and dogs, so your furry companions can join in on the fun! Additional amenities include: - Washer and dryer for your laundry needs - Refrigerator and microwave for convenience - Garbage disposal and exhaust hood for easy kitchen clean-up Don't miss out on this fantastic opportunity to make this house your home! Schedule a showing starting June 26, 2025, and get ready to fall in love with all that this property has to offer. Preferred lease duration is 1 year. This property is unfurnished. Security Deposit amount determined by the owner.`,
+    description: `Welcome to your dream home at 723 Dorset Stream Dr, nestled in the charming community of Fuquay Varina! This delightful 3-bedroom, 2-bathroom house offers a perfect blend of comfort and modern conveniences, making it an ideal retreat for anyone looking to settle down in a vibrant neighborhood. Step inside to discover a spacious 1,599 square feet of living space, designed for both relaxation and entertaining. The heart of the home features a fully-equipped kitchen with top-of-the-line appliances, including a double oven, electric stove top, and dishwasher, ensuring that meal prep is a breeze. Enjoy cozy evenings in the inviting living area or take advantage of the ample outdoor space for gatherings with friends. This pet-friendly home welcomes both cats and dogs, so your furry companions can join in on the fun! Additional amenities include: - Washer and dryer for your laundry needs - Refrigerator and microwave for convenience - Garbage disposal and exhaust hood for easy kitchen clean-up Don't miss out on this fantastic opportunity to make this house your home! Schedule a showing starting July 26, 2025, and get ready to fall in love with all that this property has to offer. Preferred lease duration is 1 year. This property is unfurnished. Security Deposit amount determined by the owner.`,
   },
   {
     id: 20,
@@ -770,7 +770,7 @@ Please be advised that this property is managed by T.R. Lawing Realty. We will N
     rent: 3100,
     every: 'mon',
     sqrFt: '3,209',
-    availableDate: '8/14/2025',
+    availableDate: '8/20/2025',
     propertyType: 'Duplex',
     image: '/images/properties/twenty-one/1.webp',
     images: [
@@ -916,7 +916,7 @@ Beware of Scammers! Consider the following points*:
     rent: 850,
     every: 'mon',
     sqrFt: '250',
-    availableDate: '8/3/2025',
+    availableDate: 'Availale now',
     propertyType: 'Duplex',
     image: '/images/properties/twenty-four/1.jpg',
     images: [
@@ -944,7 +944,7 @@ Beware of Scammers! Consider the following points*:
     rent: 2250,
     every: 'mon',
     sqrFt: '-',
-    availableDate: '7/14/2025',
+    availableDate: '8/01/2025',
     propertyType: 'Apartment',
     image: '/images/properties/twenty-five/1.jpg',
     images: [
