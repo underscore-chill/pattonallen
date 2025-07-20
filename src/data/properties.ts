@@ -103,7 +103,7 @@ export const properties: Property[] = [
       '/images/properties/three/10.jpg',
     ],
     description:
-      'Amazing 2 bedroom, 1 bathroom apartment in Chapel Hill. Amenities included: central air, central heat, dishwasher, hardwood floors, stainless steel appliance, and washer dryer. Utilities included: water. Is pet friendly. Walk to downtown Chapel Hill- Carrboro. Date Available: Aug 1st 2025. $1,750/month rent. $1,750 security deposit required. Please submit the form on this page or contact David at 919-945-4192 to learn more. This property is managed by a responsible landlord using Avail landlord software.',
+      'Amazing 2 bedroom, 1 bathroom apartment in Chapel Hill. Amenities included: central air, central heat, dishwasher, hardwood floors, stainless steel appliance, and washer dryer. Utilities included: water. Is pet friendly. Walk to downtown Chapel Hill- Carrboro. Date Available: Aug 1st 2025. $1,750/month rent. $1,750 security deposit required. This property is managed by a responsible landlord using Avail landlord software.',
   },
   {
     id: 4,

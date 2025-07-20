@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Rental Inquiry - Lexi Gray Properties</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 20px;
+      }
+
+      .email-container {
+        max-width: 700px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="mountain" patternUnits="userSpaceOnUse" width="20" height="20"><polygon points="0,20 10,5 20,20" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23mountain)"/></svg>')
+          repeat;
+        opacity: 0.3;
+      }
+
+      .logo {
+        font-size: 2.5em;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .tagline {
+        font-size: 1.1em;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+      }
+
+      .content {
+        padding: 40px 30px;
+      }
+
+      .greeting {
+        font-size: 1.4em;
+        color: #2c3e50;
+        margin-bottom: 25px;
+        border-bottom: 3px solid #e74c3c;
+        padding-bottom: 10px;
+        display: inline-block;
+      }
+
+      .message {
+        color: #34495e;
+        font-size: 1.1em;
+        margin-bottom: 30px;
+        line-height: 1.7;
+      }
+
+      .inquiry-details {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 30px 0;
+        border-left: 5px solid #e74c3c;
+      }
+
+      .details-title {
+        font-size: 1.3em;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+
+      .details-title::before {
+        content: "📋";
+        margin-right: 10px;
+        font-size: 1.2em;
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .detail-item {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(231, 76, 60, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .detail-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .detail-label {
+        font-weight: bold;
+        color: #e74c3c;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+      }
+
+      .detail-value {
+        color: #2c3e50;
+        font-size: 1.1em;
+      }
+
+      .special-requests {
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        border-radius: 15px;
+        padding: 25px;
+        margin: 25px 0;
+        border-left: 5px solid #3498db;
+      }
+
+      .special-title {
+        font-size: 1.2em;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+
+      .special-title::before {
+        content: "💬";
+        margin-right: 10px;
+      }
+
+      .special-content {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 8px;
+        color: #34495e;
+        font-style: italic;
+      }
+
+      .next-steps {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .next-steps h3 {
+        margin-bottom: 15px;
+        font-size: 1.3em;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: #e74c3c;
+        color: white;
+        padding: 15px 35px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1em;
+        margin: 15px 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+      }
+
+      .cta-button:hover {
+        background: #c0392b;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+      }
+
+      .footer {
+        background: #2c3e50;
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .contact-info {
+        margin-bottom: 20px;
+      }
+
+      .contact-item {
+        display: inline-block;
+        margin: 0 15px;
+        font-size: 1em;
+      }
+
+      .signature {
+        font-style: italic;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      @media (max-width: 600px) {
+        .email-container {
+          margin: 10px;
+          border-radius: 10px;
+        }
+
+        .header,
+        .content,
+        .footer {
+          padding: 20px;
+        }
+
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-item {
+          display: block;
+          margin: 10px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        <div class="logo">LEXI GRAY</div>
+        <div class="tagline">Premium Mountain Rentals</div>
+      </div>
+
+      <div class="content">
+        <div class="greeting">New Rental Inquiry Received</div>
+
+        <div class="message">
+          A new rental inquiry has been submitted through the website. Please
+          find all the customer details and preferences below.
+        </div>
+
+        <div class="inquiry-details">
+          <div class="details-title">Your Rental Inquiry Details</div>
+          <div class="details-grid">
+            <div class="detail-item">
+              <div class="detail-label">Guest Name</div>
+              <div class="detail-value">{name}</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Email</div>
+              <div class="detail-value">{email}</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Phone</div>
+              <div class="detail-value">{phone}</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Party Size</div>
+              <div class="detail-value">{guestSize}</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Move-in Date</div>
+              <div class="detail-value">{moveInDate}</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Preferred Time</div>
+              <div class="detail-value">{preferedTime}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="special-requests">
+          <div class="special-title">Special Requests & Notes</div>
+          <div class="special-content">{specialNote}</div>
+        </div>
+
+        <div class="message">
+          Please review this new rental inquiry and follow up with the customer
+          at your earliest convenience. All contact details and preferences are
+          listed above for your reference.
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="signature">
+          This inquiry was automatically generated from the Lexi Gray Properties
+          website.<br />
+          <strong>Please respond to the customer promptly</strong>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

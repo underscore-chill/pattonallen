@@ -1,11 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, FormsModule } from '@angular/forms';
-import {
-  FormBuilder,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import emailjs from '@emailjs/browser';
+import { HttpStatusCode } from '@angular/common/http';
 
 interface ContactForm {
   firstName: string;
@@ -25,8 +24,10 @@ interface ContactForm {
 })
 export class Contact {
   contactForm: FormGroup;
-  submitted = false;
-  success = false;
+  isLoading = signal<boolean>(false);
+  success = signal<boolean>(false);
+
+  toastr = inject(ToastrService);
 
   userTypes = [
     { value: 'tenant', label: 'Tenant' },
@@ -54,24 +55,47 @@ export class Contact {
     return this.contactForm.controls;
   }
 
-  onSubmit() {
-    this.submitted = true;
-
+  async onSubmit() {
     if (this.contactForm.invalid) {
+      this.toastr.error('Please fill in all required fields correctly.', 'Error');
       return;
     }
-
+    
     // Here you would typically send the form data to your backend
+    this.isLoading.set(true);
     console.log('Form submitted:', this.contactForm.value);
+    try {
+      // this.isSending.set(true);
+      const response = await emailjs.send(
+        'service_b1ay5nb',
+        'template_h3ep0k4',
+        this.contactForm.value,
+        'CMVI5elZQNxHW2BEF'
+      );
+      if (response.status != HttpStatusCode.Ok) {
+        // this.submitted.set(false);
+        this.toastr.error(
+          'Something unexpected happened while sending the message.Please try again.',
+          'Error'
+        );
+        return;
+      }
+      if (response.status == HttpStatusCode.Ok) {
+        this.toastr.success(
+          'Thank you! Your viewing appointment request has been submitted. We will contact you within 24 hours to confirm your appointment.',
+          'Success'
+        );
+        this.success.set(true);
+        this.isLoading.set(false);
+        this.contactForm.reset();
+        return;
+      }
+    } catch (error: any) {
+      this.toastr.error('Message not sent. Try again.', 'Error');
+    }
 
-    // Simulate successful submission
-    this.success = true;
-    this.submitted = false;
-    this.contactForm.reset();
-
-    // Reset form state after showing success message
     setTimeout(() => {
-      this.success = false;
+      this.success.set(false);
     }, 5000);
   }
 

@@ -70,12 +70,13 @@
             class="space-y-6"
           >
             <!-- Success Message -->
+            @if(success()){
             <div
-              *ngIf="success"
               class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4"
             >
               <p>Thank you for your message! We'll be in touch soon.</p>
             </div>
+            }
 
             <!-- Name Fields -->
             <div class="flex flex-col sm:flex-row gap-4">
@@ -88,11 +89,11 @@
                   id="firstName"
                   formControlName="firstName"
                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  [ngClass]="{'border-red-500': submitted && f['firstName'].errors}"
+                  [ngClass]="{'border-red-500': f['firstName'].errors}"
                   placeholder="First"
                 />
                 <div
-                  *ngIf="submitted && f['firstName'].errors"
+                  *ngIf="f['firstName'].errors"
                   class="text-red-500 text-sm mt-1"
                 >
                   First name is required
@@ -110,11 +111,11 @@
                   id="lastName"
                   formControlName="lastName"
                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  [ngClass]="{'border-red-500': submitted && f['lastName'].errors}"
+                  [ngClass]="{'border-red-500': f['lastName'].errors}"
                   placeholder="Last"
                 />
                 <div
-                  *ngIf="submitted && f['lastName'].errors"
+                  *ngIf="f['lastName'].errors"
                   class="text-red-500 text-sm mt-1"
                 >
                   Last name is required
@@ -132,12 +133,9 @@
                 id="email"
                 formControlName="email"
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                [ngClass]="{'border-red-500': submitted && f['email'].errors}"
+                [ngClass]="{'border-red-500': f['email'].errors}"
               />
-              <div
-                *ngIf="submitted && f['email'].errors"
-                class="text-red-500 text-sm mt-1"
-              >
+              <div *ngIf="f['email'].errors" class="text-red-500 text-sm mt-1">
                 <div *ngIf="f['email'].errors['required']">
                   Email is required
                 </div>
@@ -158,16 +156,13 @@
                 formControlName="phone"
                 (input)="formatPhoneNumber($event)"
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                [ngClass]="{'border-red-500': submitted && f['phone'].errors}"
+                [ngClass]="{'border-red-500': f['phone'].errors}"
               />
               <div class="text-gray-500 text-xs mt-1">
                 {{ contactForm.get('phone')?.value?.length || 0 }} of 10 max
                 characters
               </div>
-              <div
-                *ngIf="submitted && f['phone'].errors"
-                class="text-red-500 text-sm mt-1"
-              >
+              <div *ngIf="f['phone'].errors" class="text-red-500 text-sm mt-1">
                 <div *ngIf="f['phone'].errors['required']">
                   Phone number is required
                 </div>
@@ -203,10 +198,10 @@
                 formControlName="comments"
                 rows="6"
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                [ngClass]="{'border-red-500': submitted && f['comments'].errors}"
+                [ngClass]="{'border-red-500': f['comments'].errors}"
               ></textarea>
               <div
-                *ngIf="submitted && f['comments'].errors"
+                *ngIf="f['comments'].errors"
                 class="text-red-500 text-sm mt-1"
               >
                 Please enter your comments
@@ -226,28 +221,22 @@
                   I am human
                 </label>
               </div>
-              <div class="mt-2">
-                <img
-                  src="assets/images/recaptcha.png"
-                  alt="reCAPTCHA"
-                  class="h-12"
-                />
-              </div>
-              <div
-                *ngIf="submitted && f['recaptcha'].errors"
-                class="text-red-500 text-sm mt-1"
-              >
+
+              @if(f['recaptcha'].errors){
+              <div class="text-red-500 text-sm mt-1">
                 Please verify that you are human
               </div>
+              }
             </div>
 
             <!-- Submit Button -->
             <div>
               <button
                 type="submit"
+                [disabled]="isLoading()"
                 class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-8 rounded transition-colors duration-200"
               >
-                Submit
+                @if(isLoading()){ Submitting. }@else { Submit }
               </button>
             </div>
           </form>

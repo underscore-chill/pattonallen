@@ -174,13 +174,8 @@ export class RentalInquiryComponent implements OnInit {
         return;
       }
     } catch (error: any) {
-      if (error?.status != HttpStatusCode.Ok) {
-        this.isSending.set(false);
-        this.toastr.error('Message not sent. Try again.', 'Error');
-        this.resetForm();
-
-        return;
-      }
+      this.isSending.set(false);
+      this.toastr.error('Message not sent. Try again.', 'Error');
     }
   }
 
