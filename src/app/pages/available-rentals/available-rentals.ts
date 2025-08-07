@@ -26,7 +26,7 @@ export class AvailableRentals {
   cities = [
     'All Cities',
     'Candler',
-    'Asheville',
+    'Goldsboro',
     'Black Mountain',
     'Waynesville',
     'Hendersonville',
