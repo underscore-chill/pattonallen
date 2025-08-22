@@ -27,7 +27,7 @@ export class About {
             Association of Residential Property Managers, Irene is always
             focused on expanding her knowledge and understanding in this field.
             She joined LEXI GRAY PROPERTY MANAGEMENT because she aligned deeply with their
-            dedication to providing an extraordinary experience to both owners
+            dedication to providing an extraordinary experience to the owner
             and tenants, and because of the company's commitment to supporting
             the local community.`,
     },
