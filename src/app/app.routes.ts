@@ -49,5 +49,12 @@ export const routes: Routes = [
       import('./pages/rental-inquiry/rental-inquiry').then(
         (m) => m.RentalInquiryComponent
       ),
-  }
+  },
+  {
+    path: 'privacy-policy',
+    loadComponent: () =>
+      import('./pages/privacy-policy/privacy-policy').then(
+        (m) => m.PrivacyPolicy
+      ),
+  },
 ];
