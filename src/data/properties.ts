@@ -649,7 +649,7 @@ Welcome to Legacy Lake Norman! From the moment you walk through the door, you'll
     rent: 2795,
     every: 'mon',
     sqrFt: '2,218',
-    availableDate: 'This August',
+    availableDate: 'October',
     propertyType: 'House',
     image: '/images/properties/eighteen/1.jpg',
     images: [
@@ -677,7 +677,7 @@ Welcome to Legacy Lake Norman! From the moment you walk through the door, you'll
       '/images/properties/eighteen/23.jpg',
       '/images/properties/eighteen/24.jpg',
     ],
-    description: `Available this August~A MUST SEE! Gorgeous & popular 12 Oaks. Just a stroll over to enjoy the neighborhood amenities, which are INCLUDED with rent -which also includes golf package! Amenities: 3 pools, clubhouse, playground, fitness center, pickleball and tennis courts, greenways, and a community garden! End-unit w/ covered front porch opens to hardwood floors; gas fireplace in Living room; lovely Dining area; stainless steel appliances in eat-in kitchen; 1st floor main retreat has 2 walk-in closets; Loft & study area on 2nd floor + 2 spacious bedrooms; rear entry 2-car garage. Photos prior to current Tenant. Sorry, firm no pet policy.`,
+    description: `Available on October~A MUST SEE! Gorgeous & popular 12 Oaks. Just a stroll over to enjoy the neighborhood amenities, which are INCLUDED with rent -which also includes golf package! Amenities: 3 pools, clubhouse, playground, fitness center, pickleball and tennis courts, greenways, and a community garden! End-unit w/ covered front porch opens to hardwood floors; gas fireplace in Living room; lovely Dining area; stainless steel appliances in eat-in kitchen; 1st floor main retreat has 2 walk-in closets; Loft & study area on 2nd floor + 2 spacious bedrooms; rear entry 2-car garage. Photos prior to current Tenant. Sorry, firm no pet policy.`,
   },
   {
     id: 19,
@@ -966,7 +966,7 @@ Beware of Scammers! Consider the following points*:
       '/images/properties/twenty-five/16.jpg',
       '/images/properties/twenty-five/17.jpg',
     ],
-    description: `Discover the perfect blend of comfort and convenience at 830 New Derby Lane in Apex, NC. This charming end-unit townhouse offers 3 bedrooms and 2.5 bathrooms, providing ample space for relaxation and entertainment. Built in 2018, the property boasts a modern design with an open floor plan accentuated by 9-foot ceilings and elegant hardwood flooring on the first floor.The kitchen features granite countertops, stainless steel appliances, and a gas range, making meal preparation a delight. The owner's suite offers a tranquil retreat with a spacious walk-in closet and a double vanity in the ensuite bathroom.Situated in the desirable Salem Pointe neighborhood, this home is ideally located just 2 miles from downtown Apex, offering easy access to shopping, dining, and entertainment. Nature enthusiasts will appreciate being less than a mile from Apex Community Park, perfect for outdoor activities. Commuters will benefit from the property's proximity to US-64 and I-540, making travel a breeze.Perfect for families or professionals seeking a welcoming community, this townhouse includes a generous 2-car garage. Available August 1st.Listing agent is the property owner`,
+    description: `Discover the perfect blend of comfort and convenience at 830 New Derby Lane in Apex, NC. This charming end-unit townhouse offers 3 bedrooms and 2.5 bathrooms, providing ample space for relaxation and entertainment. Built in 2018, the property boasts a modern design with an open floor plan accentuated by 9-foot ceilings and elegant hardwood flooring on the first floor.The kitchen features granite countertops, stainless steel appliances, and a gas range, making meal preparation a delight. The owner's suite offers a tranquil retreat with a spacious walk-in closet and a double vanity in the ensuite bathroom.Situated in the desirable Salem Pointe neighborhood, this home is ideally located just 2 miles from downtown Apex, offering easy access to shopping, dining, and entertainment. Nature enthusiasts will appreciate being less than a mile from Apex Community Park, perfect for outdoor activities. Commuters will benefit from the property's proximity to US-64 and I-540, making travel a breeze.Perfect for families or professionals seeking a welcoming community, this townhouse includes a generous 2-car garage. Available October 1st.Listing agent is the property owner`,
   },
   {
     id: 26,
